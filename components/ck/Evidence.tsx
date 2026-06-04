@@ -33,44 +33,45 @@ const items: Item[] = [
 ]
 
 export const Evidence = () => (
-  <section className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
-    <div className="mb-14 max-w-2xl">
-      <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
-        Dokumentert effekt
-      </p>
-      <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#33302b] lg:text-[48px]">
-        Å trene sammen virker — på mer enn formen
-      </h2>
-      <p className="mt-5 text-[18px] leading-relaxed text-[#33302b]/70">
-        Forskningen peker tydelig i én retning: det sosiale gjør trening mer verdifull —
-        for helse, humør og hverdag.
-      </p>
-    </div>
+  <section className="bg-[#2e3328] text-white">
+    <div className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
+      <div className="mb-16 max-w-2xl">
+        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#c3d29c] uppercase">
+          Dokumentert effekt
+        </p>
+        <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-white lg:text-[48px]">
+          Å trene sammen virker — på mer enn formen
+        </h2>
+        <p className="mt-5 text-[18px] leading-relaxed text-white/70">
+          Forskningen peker tydelig i én retning: det sosiale gjør trening mer verdifull —
+          for helse, humør og hverdag.
+        </p>
+      </div>
 
-    <div className="grid gap-6 lg:grid-cols-3">
-      {items.map((it) => (
-        <div
-          key={it.title}
-          className="flex flex-col rounded-[24px] border border-[#33302b]/8 bg-white p-8 shadow-sm"
-        >
-          <p className="font-[family-name:var(--font-ck-display)] text-[44px] leading-none font-semibold text-[#3e88ab]">
-            {it.stat}
-          </p>
-          <h3 className="mt-4 text-[20px] font-semibold text-[#33302b]">{it.title}</h3>
-          <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[#33302b]/70">{it.text}</p>
-          {it.note && (
-            <p className="mt-3 text-[12px] leading-relaxed text-[#33302b]/45">{it.note}</p>
-          )}
-          <a
-            href={it.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 text-[13px] font-medium text-[#3e88ab] underline-offset-2 hover:underline"
-          >
-            Kilde: {it.source}
-          </a>
-        </div>
-      ))}
+      <div className="grid gap-x-12 gap-y-14 md:grid-cols-3">
+        {items.map((it) => (
+          <div key={it.title} className="border-t border-white/15 pt-7">
+            <p className="font-[family-name:var(--font-ck-display)] text-[52px] leading-none font-medium text-[#c3d29c]">
+              {it.stat}
+            </p>
+            <h3 className="mt-4 font-[family-name:var(--font-ck-display)] text-[25px] font-medium text-white">
+              {it.title}
+            </h3>
+            <p className="mt-3 text-[16px] leading-relaxed text-white/75">{it.text}</p>
+            {it.note && (
+              <p className="mt-3 text-[12px] leading-relaxed text-white/45">{it.note}</p>
+            )}
+            <a
+              href={it.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-block text-[13px] font-medium text-white/55 underline-offset-2 transition-colors hover:text-[#c3d29c] hover:underline"
+            >
+              Kilde: {it.source}
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 )
