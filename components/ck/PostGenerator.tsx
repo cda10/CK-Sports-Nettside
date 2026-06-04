@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 
 const inputClass =
@@ -21,6 +22,8 @@ export const PostGenerator = () => {
   const [result, setResult] = useState("")
   const [error, setError] = useState("")
   const [copied, setCopied] = useState(false)
+  const [images, setImages] = useState<{ src: string; label: string }[]>([])
+  const [motif, setMotif] = useState("")
 
   async function generate() {
     if (!topic.trim()) {
@@ -31,6 +34,8 @@ export const PostGenerator = () => {
     setStatus("loading")
     setError("")
     setResult("")
+    setImages([])
+    setMotif("")
     try {
       const res = await fetch("/api/generate", {
         method: "POST",
@@ -40,6 +45,8 @@ export const PostGenerator = () => {
       const data = await res.json()
       if (res.ok && data.ok) {
         setResult(data.text)
+        setImages(data.images || [])
+        setMotif(data.motif || "")
         setStatus("done")
       } else {
         setStatus("error")
@@ -150,6 +157,39 @@ export const PostGenerator = () => {
             <pre className="font-sans text-[15px] leading-relaxed whitespace-pre-wrap text-[#33302b]/85">
               {result}
             </pre>
+
+            {images.length > 0 && (
+              <div className="mt-6 border-t border-[#33302b]/10 pt-5">
+                <p className="mb-3 text-[13px] font-semibold tracking-wide text-[#33302b]/50 uppercase">
+                  Foreslåtte bilder
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {images.map((im) => (
+                    <a
+                      key={im.src}
+                      href={im.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                        <Image
+                          src={im.src}
+                          alt={im.label}
+                          fill
+                          sizes="220px"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <p className="mt-1.5 text-[12px] text-[#33302b]/60">{im.label}</p>
+                    </a>
+                  ))}
+                </div>
+                {motif && (
+                  <p className="mt-4 text-[13px] leading-relaxed text-[#33302b]/55">{motif}</p>
+                )}
+              </div>
+            )}
           </>
         ) : (
           <p className="flex h-full min-h-40 items-center justify-center text-center text-[15px] text-[#33302b]/40">

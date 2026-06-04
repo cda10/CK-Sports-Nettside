@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server"
 
+import { pickImages, motifIdea } from "@/lib/postImages"
+
 export const runtime = "nodejs"
 
 // Internt verktøy. Krever (i Vercel):
@@ -78,9 +80,12 @@ export async function POST(request: Request) {
 
   // Demo-modus: når ingen ekte AI-nøkkel er satt, men STUDIO_DEMO=1.
   // Lar dere teste flyten og se stemmen/formatet uten API-kostnad.
+  const images = pickImages(topic, channel)
+  const motif = motifIdea(topic)
+
   if (!apiKey) {
     if (process.env.STUDIO_DEMO === "1") {
-      return NextResponse.json({ ok: true, text: demoPost(channel, topic, details) })
+      return NextResponse.json({ ok: true, text: demoPost(channel, topic, details), images, motif })
     }
     return NextResponse.json({ ok: false, error: "not_configured" }, { status: 503 })
   }
@@ -115,7 +120,7 @@ Gi to alternative varianter, nummerert "Variant 1" og "Variant 2".`
 
     const data = await res.json()
     const text = data?.content?.[0]?.text || ""
-    return NextResponse.json({ ok: true, text })
+    return NextResponse.json({ ok: true, text, images, motif })
   } catch (err) {
     console.error("[generate] failed", err)
     return NextResponse.json({ ok: false, error: "ai_failed" }, { status: 502 })
