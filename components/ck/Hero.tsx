@@ -5,8 +5,8 @@ import { Button } from "./Button"
 export const Hero = () => (
   <section id="top" className="relative flex min-h-[92vh] items-end overflow-hidden">
     <Image
-      src="/ck/trip-sunset-palms.jpg"
-      alt="Palmer og strand på en Move&Yoga treningsreise ved Middelhavet"
+      src="/ck/trip-group.jpg"
+      alt="Yoga i solnedgang på en Move&Yoga treningsreise ved Middelhavet"
       fill
       priority
       sizes="100vw"

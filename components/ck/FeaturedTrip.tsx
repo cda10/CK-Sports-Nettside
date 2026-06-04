@@ -30,8 +30,8 @@ export const FeaturedTrip = () => (
         <div className="grid grid-cols-2 gap-4">
           <div className="relative col-span-2 aspect-[16/10] overflow-hidden rounded-[24px]">
             <Image
-              src="/ck/trip-group.jpg"
-              alt="Reisefølget samlet på en Move&Yoga treningsreise ved Middelhavet"
+              src="/ck/trip-sunset-palms.jpg"
+              alt="Strand og palmer på en Move&Yoga treningsreise ved Middelhavet"
               fill
               sizes="(min-width: 1024px) 560px, 100vw"
               className="object-cover"
