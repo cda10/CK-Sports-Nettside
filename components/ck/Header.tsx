@@ -5,6 +5,8 @@ import Image from "next/image"
 import Link from "next/link"
 import cn from "classnames"
 
+import { LeadButton } from "./LeadButton"
+
 const navLinks = [
   { label: "Bedrifts-bootcamp", href: "#bedrift" },
   { label: "Move & Yoga", href: "#reiser" },
@@ -60,12 +62,9 @@ export const Header = () => {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            href="#kontakt"
-            className="hidden rounded-full bg-[#62a8c9] px-6 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-[#3e88ab] sm:inline-flex"
-          >
-            Book bootcamp
-          </Link>
+          <span className="hidden sm:block">
+            <LeadButton type="bedrift" label="Book bootcamp" variant="primary" size="sm" />
+          </span>
           <button
             type="button"
             aria-label="Meny"
@@ -94,13 +93,12 @@ export const Header = () => {
                 {label}
               </Link>
             ))}
-            <Link
-              href="#kontakt"
-              onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-[#62a8c9] px-6 py-3 text-center text-[15px] font-medium text-white"
-            >
-              Book bootcamp
-            </Link>
+            <LeadButton
+              type="bedrift"
+              label="Book bootcamp"
+              variant="primary"
+              className="mt-2 w-full"
+            />
           </nav>
         </div>
       )}

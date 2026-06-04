@@ -1,4 +1,4 @@
-import { Button } from "./Button"
+import { LeadButton } from "./LeadButton"
 
 export const CtaBand = () => (
   <section className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
@@ -11,17 +11,15 @@ export const CtaBand = () => (
         eller reisen for deg. Helt uforpliktende.
       </p>
       <div className="mt-9 flex flex-wrap justify-center gap-3">
-        <Button href="mailto:kathrine@maaseide.no" variant="light">
-          Meld interesse
-        </Button>
-        <Button
-          href="tel:+4791639927"
-          variant="primary"
-          className="bg-white/15 hover:bg-white/25"
-        >
-          Ring +47 916 39 927
-        </Button>
+        <LeadButton type="bedrift" label="Book bedrifts-bootcamp" variant="light" />
+        <LeadButton type="reise" label="Bli med på reise" variant="ghostLight" />
       </div>
+      <p className="mt-6 text-[14px] text-white/80">
+        Eller ring oss direkte:{" "}
+        <a href="tel:+4791639927" className="font-medium text-white underline-offset-2 hover:underline">
+          +47 916 39 927
+        </a>
+      </p>
     </div>
   </section>
 )

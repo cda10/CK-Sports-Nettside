@@ -3,10 +3,11 @@ import {
   Intro,
   Pillars,
   Corporate,
+  TrustLogos,
   FeaturedTrip,
   AboutKathrine,
+  Testimonials,
   Included,
-  Quote,
   CtaBand,
 } from "@/components/ck"
 
@@ -17,10 +18,11 @@ export default function HomePage() {
       <Intro />
       <Pillars />
       <Corporate />
+      <TrustLogos />
       <FeaturedTrip />
       <AboutKathrine />
+      <Testimonials />
       <Included />
-      <Quote />
       <CtaBand />
     </>
   )

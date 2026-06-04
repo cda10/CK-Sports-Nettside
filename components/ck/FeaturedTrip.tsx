@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { Button } from "./Button"
+import { LeadButton } from "./LeadButton"
 
 const included = [
   "Daglige trenings- og yogaøkter med Kathrine",
@@ -90,9 +90,7 @@ export const FeaturedTrip = () => (
           </ul>
 
           <div className="mt-auto pt-9">
-            <Button href="#kontakt" variant="primary">
-              Meld interesse
-            </Button>
+            <LeadButton type="reise" label="Sikre plass" variant="primary" trip="Malaga" />
             <p className="mt-4 text-[14px] text-[#1f3a4d]/55">
               Få datoer, pris og full reiseplan tilsendt — uforpliktende.
             </p>

@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { Button } from "./Button"
+import { LeadButton } from "./LeadButton"
 
 const benefits = [
   {
@@ -54,9 +54,7 @@ export const Corporate = () => (
           </div>
 
           <div className="mt-9">
-            <Button href="#kontakt" variant="primary">
-              Book bedrifts-bootcamp
-            </Button>
+            <LeadButton type="bedrift" label="Book bedrifts-bootcamp" variant="primary" />
             <p className="mt-4 text-[14px] text-[#1f3a4d]/55">
               Fortell oss om teamet, så setter vi opp et opplegg som passer dere.
             </p>
