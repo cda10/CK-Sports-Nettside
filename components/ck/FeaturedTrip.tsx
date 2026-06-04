@@ -13,13 +13,13 @@ export const FeaturedTrip = () => (
   <section id="reiser" className="scroll-mt-24 bg-[#f3efe8]">
     <div className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-32">
       <div className="mb-14 max-w-2xl">
-        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#62a8c9] uppercase">
+        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
           Move & Yoga treningsreiser
         </p>
-        <h2 className="font-[family-name:var(--font-ck-display)] text-[40px] leading-tight font-medium text-[#1f3a4d] lg:text-[56px]">
+        <h2 className="font-[family-name:var(--font-ck-display)] text-[40px] leading-tight font-medium text-[#33302b] lg:text-[56px]">
           Lad opp i solen
         </h2>
-        <p className="mt-5 text-[18px] leading-relaxed text-[#1f3a4d]/70">
+        <p className="mt-5 text-[18px] leading-relaxed text-[#33302b]/70">
           En uke der du trener, puster og hviler — i vakre omgivelser ved Middelhavet.
           Neste reise går til Malaga.
         </p>
@@ -59,30 +59,30 @@ export const FeaturedTrip = () => (
 
         {/* Details */}
         <div className="flex flex-col">
-          <div className="flex flex-wrap gap-x-8 gap-y-3 border-b border-[#1f3a4d]/10 pb-6">
+          <div className="flex flex-wrap gap-x-8 gap-y-3 border-b border-[#33302b]/10 pb-6">
             <div>
-              <p className="text-[12px] font-semibold tracking-[0.18em] text-[#1f3a4d]/45 uppercase">
+              <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">
                 Destinasjon
               </p>
-              <p className="mt-1 text-[17px] font-medium text-[#1f3a4d]">Malaga, Spania</p>
+              <p className="mt-1 text-[17px] font-medium text-[#33302b]">Malaga, Spania</p>
             </div>
             <div>
-              <p className="text-[12px] font-semibold tracking-[0.18em] text-[#1f3a4d]/45 uppercase">
+              <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">
                 Varighet
               </p>
-              <p className="mt-1 text-[17px] font-medium text-[#1f3a4d]">1 uke</p>
+              <p className="mt-1 text-[17px] font-medium text-[#33302b]">1 uke</p>
             </div>
             <div>
-              <p className="text-[12px] font-semibold tracking-[0.18em] text-[#1f3a4d]/45 uppercase">
+              <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">
                 Nivå
               </p>
-              <p className="mt-1 text-[17px] font-medium text-[#1f3a4d]">Alle nivåer</p>
+              <p className="mt-1 text-[17px] font-medium text-[#33302b]">Alle nivåer</p>
             </div>
           </div>
 
           <ul className="mt-7 space-y-3">
             {included.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-[16px] text-[#1f3a4d]/80">
+              <li key={item} className="flex items-start gap-3 text-[16px] text-[#33302b]/80">
                 <span className="mt-[7px] h-2 w-2 flex-none rounded-full bg-[#62a8c9]" />
                 {item}
               </li>
@@ -91,7 +91,7 @@ export const FeaturedTrip = () => (
 
           <div className="mt-auto pt-9">
             <LeadButton type="reise" label="Sikre plass" variant="primary" trip="Malaga" />
-            <p className="mt-4 text-[14px] text-[#1f3a4d]/55">
+            <p className="mt-4 text-[14px] text-[#33302b]/55">
               Få datoer, pris og full reiseplan tilsendt — uforpliktende.
             </p>
           </div>

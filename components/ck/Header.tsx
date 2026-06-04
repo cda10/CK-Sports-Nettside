@@ -30,7 +30,7 @@ export const Header = () => {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-[#1f3a4d]/10 bg-[#faf8f4]/85 backdrop-blur-xl"
+          ? "border-b border-[#33302b]/10 bg-[#faf8f4]/85 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -44,7 +44,7 @@ export const Header = () => {
             className="h-11 w-11"
             priority
           />
-          <span className="hidden text-[15px] font-semibold tracking-[0.22em] text-[#1f3a4d] sm:block">
+          <span className="hidden text-[15px] font-semibold tracking-[0.22em] text-[#33302b] sm:block">
             CK SPORTS
           </span>
         </Link>
@@ -54,7 +54,7 @@ export const Header = () => {
             <Link
               key={href}
               href={href}
-              className="rounded-full px-4 py-2 text-[14px] font-medium text-[#1f3a4d]/70 transition-colors hover:text-[#1f3a4d]"
+              className="rounded-full px-4 py-2 text-[14px] font-medium text-[#33302b]/70 transition-colors hover:text-[#33302b]"
             >
               {label}
             </Link>
@@ -69,7 +69,7 @@ export const Header = () => {
             type="button"
             aria-label="Meny"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1f3a4d]/20 text-[#1f3a4d] lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#33302b]/20 text-[#33302b] lg:hidden"
           >
             <span className="space-y-[5px]">
               <span className="block h-[2px] w-5 bg-current" />
@@ -81,14 +81,14 @@ export const Header = () => {
       </div>
 
       {open && (
-        <div className="border-t border-[#1f3a4d]/10 bg-[#faf8f4]/95 px-5 py-4 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-[#33302b]/10 bg-[#faf8f4]/95 px-5 py-4 backdrop-blur-xl lg:hidden">
           <nav className="flex flex-col gap-1">
             {navLinks.map(({ label, href }) => (
               <Link
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-4 py-3 text-[15px] font-medium text-[#1f3a4d]/80 hover:bg-[#1f3a4d]/5"
+                className="rounded-xl px-4 py-3 text-[15px] font-medium text-[#33302b]/80 hover:bg-[#2e3328]/5"
               >
                 {label}
               </Link>

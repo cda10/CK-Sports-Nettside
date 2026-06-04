@@ -30,9 +30,9 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 flex items-baseline justify-between text-[13px] font-medium text-[#1f3a4d]/70">
+      <span className="mb-1.5 flex items-baseline justify-between text-[13px] font-medium text-[#33302b]/70">
         {label}
-        <span className="text-[#1f3a4d]">
+        <span className="text-[#33302b]">
           {new Intl.NumberFormat("nb-NO").format(value)}
           {suffix ? ` ${suffix}` : ""}
         </span>
@@ -61,16 +61,16 @@ export const RoiCalculator = () => {
   return (
     <section id="kalkulator" className="mx-auto max-w-[1220px] scroll-mt-24 px-5 py-24 lg:px-10 lg:py-28">
       <div className="mb-12 max-w-2xl">
-        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#62a8c9] uppercase">
+        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
           Regn på det
         </p>
-        <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#1f3a4d] lg:text-[48px]">
+        <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#33302b] lg:text-[48px]">
           Hva koster sykefraværet dere?
         </h2>
-        <p className="mt-5 text-[18px] leading-relaxed text-[#1f3a4d]/70">
+        <p className="mt-5 text-[18px] leading-relaxed text-[#33302b]/70">
           Et konservativt, kildebasert anslag. Juster tallene til deres egen situasjon.
         </p>
-        <p className="mt-3 text-[14px] leading-relaxed text-[#1f3a4d]/55">
+        <p className="mt-3 text-[14px] leading-relaxed text-[#33302b]/55">
           Tallene bygger på{" "}
           <a
             className="font-medium text-[#3e88ab] underline-offset-2 hover:underline"
@@ -95,7 +95,7 @@ export const RoiCalculator = () => {
 
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
         {/* Inputs */}
-        <div className="rounded-[28px] border border-[#1f3a4d]/8 bg-white p-8 shadow-sm">
+        <div className="rounded-[28px] border border-[#33302b]/8 bg-white p-8 shadow-sm">
           <div className="space-y-7">
             <Field label="Antall ansatte" value={employees} min={1} max={500} onChange={setEmployees} />
             <Field
@@ -120,7 +120,7 @@ export const RoiCalculator = () => {
         </div>
 
         {/* Result */}
-        <div className="flex flex-col justify-between rounded-[28px] bg-gradient-to-br from-[#1f3a4d] to-[#16586f] p-8 text-white">
+        <div className="flex flex-col justify-between rounded-[28px] bg-gradient-to-br from-[#2e3328] to-[#46512f] p-8 text-white">
           <div>
             <p className="text-[13px] font-medium tracking-wide text-white/60">
               Sykefravær koster bedriften anslagsvis
@@ -150,8 +150,8 @@ export const RoiCalculator = () => {
       </div>
 
       {/* Assumptions & sources — full transparency */}
-      <div className="mt-8 rounded-2xl border border-[#1f3a4d]/8 bg-[#f3efe8] p-6 text-[13px] leading-relaxed text-[#1f3a4d]/60">
-        <p className="mb-2 font-semibold text-[#1f3a4d]/80">Forutsetninger og kilder</p>
+      <div className="mt-8 rounded-2xl border border-[#33302b]/8 bg-[#f3efe8] p-6 text-[13px] leading-relaxed text-[#33302b]/60">
+        <p className="mb-2 font-semibold text-[#33302b]/80">Forutsetninger og kilder</p>
         <p>
           Beregningen bruker {WORK_DAYS} arbeidsdager per år. Standardtall: sykefravær
           6,5 % (legemeldt 5,5 % + egenmeldt 1,0 %,{" "}

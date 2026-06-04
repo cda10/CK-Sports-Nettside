@@ -35,13 +35,13 @@ const items: Item[] = [
 export const Evidence = () => (
   <section className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
     <div className="mb-14 max-w-2xl">
-      <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#62a8c9] uppercase">
+      <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
         Dokumentert effekt
       </p>
-      <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#1f3a4d] lg:text-[48px]">
+      <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#33302b] lg:text-[48px]">
         Å trene sammen virker — på mer enn formen
       </h2>
-      <p className="mt-5 text-[18px] leading-relaxed text-[#1f3a4d]/70">
+      <p className="mt-5 text-[18px] leading-relaxed text-[#33302b]/70">
         Forskningen peker tydelig i én retning: det sosiale gjør trening mer verdifull —
         for helse, humør og hverdag.
       </p>
@@ -51,15 +51,15 @@ export const Evidence = () => (
       {items.map((it) => (
         <div
           key={it.title}
-          className="flex flex-col rounded-[24px] border border-[#1f3a4d]/8 bg-white p-8 shadow-sm"
+          className="flex flex-col rounded-[24px] border border-[#33302b]/8 bg-white p-8 shadow-sm"
         >
           <p className="font-[family-name:var(--font-ck-display)] text-[44px] leading-none font-semibold text-[#3e88ab]">
             {it.stat}
           </p>
-          <h3 className="mt-4 text-[20px] font-semibold text-[#1f3a4d]">{it.title}</h3>
-          <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[#1f3a4d]/70">{it.text}</p>
+          <h3 className="mt-4 text-[20px] font-semibold text-[#33302b]">{it.title}</h3>
+          <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[#33302b]/70">{it.text}</p>
           {it.note && (
-            <p className="mt-3 text-[12px] leading-relaxed text-[#1f3a4d]/45">{it.note}</p>
+            <p className="mt-3 text-[12px] leading-relaxed text-[#33302b]/45">{it.note}</p>
           )}
           <a
             href={it.href}

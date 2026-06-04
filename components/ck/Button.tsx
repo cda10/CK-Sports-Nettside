@@ -16,9 +16,9 @@ const variants: Record<Variant, string> = {
     "bg-[#62a8c9] text-white hover:bg-[#3e88ab] shadow-sm hover:shadow-md",
   // Outlined for light backgrounds
   outline:
-    "border border-[#1f3a4d]/25 text-[#1f3a4d] hover:border-[#1f3a4d]/50 hover:bg-[#1f3a4d]/5",
+    "border border-[#33302b]/25 text-[#33302b] hover:border-[#33302b]/50 hover:bg-[#2e3328]/5",
   // For dark/photo backgrounds
-  light: "bg-white/90 text-[#1f3a4d] hover:bg-white backdrop-blur-sm",
+  light: "bg-white/90 text-[#33302b] hover:bg-white backdrop-blur-sm",
 }
 
 export const Button = ({ href, children, variant = "primary", className }: Props) => (

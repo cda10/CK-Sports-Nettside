@@ -9,7 +9,7 @@ export const Quote = () => (
       sizes="100vw"
       className="object-cover"
     />
-    <div className="absolute inset-0 bg-[#1f3a4d]/70" />
+    <div className="absolute inset-0 bg-[#2e3328]/70" />
     <div className="relative mx-auto max-w-3xl px-5 py-28 text-center lg:py-36">
       <p className="font-[family-name:var(--font-ck-display)] text-[30px] leading-[1.32] font-normal text-white lg:text-[40px]">
         «Jeg kom for å komme i form, men reiste hjem med ny energi og et helt nytt

@@ -18,8 +18,8 @@ type Props = {
 const variants: Record<Variant, string> = {
   primary: "bg-[#62a8c9] text-white hover:bg-[#3e88ab] shadow-sm hover:shadow-md",
   outline:
-    "border border-[#1f3a4d]/25 text-[#1f3a4d] hover:border-[#1f3a4d]/50 hover:bg-[#1f3a4d]/5",
-  light: "bg-white/90 text-[#1f3a4d] hover:bg-white backdrop-blur-sm",
+    "border border-[#33302b]/25 text-[#33302b] hover:border-[#33302b]/50 hover:bg-[#2e3328]/5",
+  light: "bg-white/90 text-[#33302b] hover:bg-white backdrop-blur-sm",
   ghostLight:
     "border border-white/40 bg-white/15 text-white backdrop-blur-sm hover:bg-white/25",
 }
@@ -30,8 +30,8 @@ const sizes = {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-[#1f3a4d]/15 bg-white px-4 py-3 text-[15px] text-[#1f3a4d] placeholder-[#1f3a4d]/40 outline-none transition focus:border-[#62a8c9] focus:ring-2 focus:ring-[#62a8c9]/20"
-const labelClass = "mb-1.5 block text-[13px] font-medium text-[#1f3a4d]/70"
+  "w-full rounded-xl border border-[#33302b]/15 bg-white px-4 py-3 text-[15px] text-[#33302b] placeholder-[#33302b]/40 outline-none transition focus:border-[#62a8c9] focus:ring-2 focus:ring-[#62a8c9]/20"
+const labelClass = "mb-1.5 block text-[13px] font-medium text-[#33302b]/70"
 
 type Status = "idle" | "sending" | "done" | "error" | "phone"
 
@@ -93,7 +93,7 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
 
       {open && (
         <div
-          className="fixed inset-0 z-[70] flex items-end justify-center bg-[#1f3a4d]/40 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+          className="fixed inset-0 z-[70] flex items-end justify-center bg-[#2e3328]/40 p-0 backdrop-blur-sm sm:items-center sm:p-4"
           onClick={close}
         >
           <div
@@ -102,10 +102,10 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
           >
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
-                <p className="text-[12px] font-semibold tracking-[0.2em] text-[#62a8c9] uppercase">
+                <p className="text-[12px] font-semibold tracking-[0.2em] text-[#7c8c4e] uppercase">
                   {isBedrift ? "Bedrifts-bootcamp" : "Move & Yoga treningsreise"}
                 </p>
-                <h3 className="mt-1 font-[family-name:var(--font-ck-display)] text-[26px] leading-tight font-medium text-[#1f3a4d]">
+                <h3 className="mt-1 font-[family-name:var(--font-ck-display)] text-[26px] leading-tight font-medium text-[#33302b]">
                   {isBedrift ? "Be om et tilbud" : "Sikre plassen din"}
                 </h3>
               </div>
@@ -113,7 +113,7 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
                 type="button"
                 aria-label="Lukk"
                 onClick={close}
-                className="-mr-1 flex h-9 w-9 flex-none items-center justify-center rounded-full text-[#1f3a4d]/50 hover:bg-[#1f3a4d]/5 hover:text-[#1f3a4d]"
+                className="-mr-1 flex h-9 w-9 flex-none items-center justify-center rounded-full text-[#33302b]/50 hover:bg-[#2e3328]/5 hover:text-[#33302b]"
               >
                 ✕
               </button>
@@ -124,8 +124,8 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#62a8c9]/15 text-[28px] text-[#3e88ab]">
                   ✓
                 </div>
-                <h4 className="text-[20px] font-semibold text-[#1f3a4d]">Takk! Vi tar kontakt.</h4>
-                <p className="mx-auto mt-2 max-w-sm text-[15px] text-[#1f3a4d]/65">
+                <h4 className="text-[20px] font-semibold text-[#33302b]">Takk! Vi tar kontakt.</h4>
+                <p className="mx-auto mt-2 max-w-sm text-[15px] text-[#33302b]/65">
                   Kathrine svarer deg vanligvis innen kort tid. Gleder oss til å høre fra deg.
                 </p>
                 <button
@@ -138,8 +138,8 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
               </div>
             ) : status === "phone" ? (
               <div className="py-6 text-center">
-                <h4 className="text-[20px] font-semibold text-[#1f3a4d]">Ta gjerne direkte kontakt</h4>
-                <p className="mx-auto mt-2 max-w-sm text-[15px] text-[#1f3a4d]/65">
+                <h4 className="text-[20px] font-semibold text-[#33302b]">Ta gjerne direkte kontakt</h4>
+                <p className="mx-auto mt-2 max-w-sm text-[15px] text-[#33302b]/65">
                   Send oss en e-post eller ring, så ordner vi resten.
                 </p>
                 <div className="mt-5 flex flex-col items-center gap-2">
@@ -251,7 +251,7 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
                 >
                   {status === "sending" ? "Sender …" : isBedrift ? "Send forespørsel" : "Send påmelding"}
                 </button>
-                <p className="text-center text-[12px] text-[#1f3a4d]/45">
+                <p className="text-center text-[12px] text-[#33302b]/45">
                   Helt uforpliktende. Vi deler aldri opplysningene dine.
                 </p>
               </form>

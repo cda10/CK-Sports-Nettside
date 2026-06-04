@@ -39,7 +39,7 @@ export const Pillars = () => (
             sizes="(min-width: 1024px) 590px, 100vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1f3a4d]/90 via-[#1f3a4d]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2e3328]/90 via-[#2e3328]/20 to-transparent" />
           <div className="relative p-8 lg:p-10">
             <p className="mb-3 text-[12px] font-semibold tracking-[0.24em] text-white/75 uppercase">
               {p.eyebrow}

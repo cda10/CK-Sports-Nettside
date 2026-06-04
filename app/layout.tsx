@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="no" className={`${display.variable} ${sans.variable} h-full`}>
       <body
-        className="min-h-full bg-[#faf8f4] text-[#1f3a4d] antialiased"
+        className="min-h-full bg-[#faf8f4] text-[#33302b] antialiased"
         style={{ fontFamily: "var(--font-ck-sans)" }}
       >
         <JsonLd />

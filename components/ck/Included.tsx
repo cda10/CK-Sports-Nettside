@@ -42,10 +42,10 @@ const items = [
 export const Included = () => (
   <section className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
     <div className="mb-14 max-w-2xl">
-      <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#62a8c9] uppercase">
+      <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
         Slik er det å trene med oss
       </p>
-      <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#1f3a4d] lg:text-[48px]">
+      <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#33302b] lg:text-[48px]">
         Mer enn en treningsøkt
       </h2>
     </div>
@@ -66,8 +66,8 @@ export const Included = () => (
               {item.icon}
             </svg>
           </div>
-          <h3 className="mt-5 text-[19px] font-semibold text-[#1f3a4d]">{item.title}</h3>
-          <p className="mt-2 text-[15px] leading-relaxed text-[#1f3a4d]/65">{item.text}</p>
+          <h3 className="mt-5 text-[19px] font-semibold text-[#33302b]">{item.title}</h3>
+          <p className="mt-2 text-[15px] leading-relaxed text-[#33302b]/65">{item.text}</p>
         </div>
       ))}
     </div>

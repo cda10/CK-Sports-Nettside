@@ -9,7 +9,7 @@ const nav = [
 ]
 
 export const Footer = () => (
-  <footer id="kontakt" className="bg-[#1f3a4d] text-white/80">
+  <footer id="kontakt" className="bg-[#2e3328] text-white/80">
     <div className="mx-auto grid max-w-[1220px] gap-12 px-5 py-16 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-10 lg:py-20">
       <div className="flex flex-col gap-5">
         <Image

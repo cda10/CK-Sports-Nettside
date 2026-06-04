@@ -3,8 +3,8 @@
 import { useState } from "react"
 
 const inputClass =
-  "w-full rounded-xl border border-[#1f3a4d]/15 bg-white px-4 py-3 text-[15px] text-[#1f3a4d] placeholder-[#1f3a4d]/40 outline-none transition focus:border-[#62a8c9] focus:ring-2 focus:ring-[#62a8c9]/20"
-const labelClass = "mb-1.5 block text-[13px] font-medium text-[#1f3a4d]/70"
+  "w-full rounded-xl border border-[#33302b]/15 bg-white px-4 py-3 text-[15px] text-[#33302b] placeholder-[#33302b]/40 outline-none transition focus:border-[#62a8c9] focus:ring-2 focus:ring-[#62a8c9]/20"
+const labelClass = "mb-1.5 block text-[13px] font-medium text-[#33302b]/70"
 
 const examples = [
   "Ny Move & Yoga-reise til Malaga — påmelding åpen",
@@ -101,7 +101,7 @@ export const PostGenerator = () => {
                 key={ex}
                 type="button"
                 onClick={() => setTopic(ex)}
-                className="rounded-full border border-[#1f3a4d]/15 px-3 py-1 text-[12px] text-[#1f3a4d]/60 hover:border-[#62a8c9] hover:text-[#3e88ab]"
+                className="rounded-full border border-[#33302b]/15 px-3 py-1 text-[12px] text-[#33302b]/60 hover:border-[#62a8c9] hover:text-[#3e88ab]"
               >
                 {ex}
               </button>
@@ -132,11 +132,11 @@ export const PostGenerator = () => {
       </div>
 
       {/* Result */}
-      <div className="rounded-[24px] border border-[#1f3a4d]/8 bg-white p-6 shadow-sm">
+      <div className="rounded-[24px] border border-[#33302b]/8 bg-white p-6 shadow-sm">
         {result ? (
           <>
             <div className="mb-4 flex items-center justify-between">
-              <span className="text-[13px] font-semibold tracking-wide text-[#1f3a4d]/50 uppercase">
+              <span className="text-[13px] font-semibold tracking-wide text-[#33302b]/50 uppercase">
                 Forslag · {channel}
               </span>
               <button
@@ -147,12 +147,12 @@ export const PostGenerator = () => {
                 {copied ? "Kopiert ✓" : "Kopier"}
               </button>
             </div>
-            <pre className="font-sans text-[15px] leading-relaxed whitespace-pre-wrap text-[#1f3a4d]/85">
+            <pre className="font-sans text-[15px] leading-relaxed whitespace-pre-wrap text-[#33302b]/85">
               {result}
             </pre>
           </>
         ) : (
-          <p className="flex h-full min-h-40 items-center justify-center text-center text-[15px] text-[#1f3a4d]/40">
+          <p className="flex h-full min-h-40 items-center justify-center text-center text-[15px] text-[#33302b]/40">
             Forslagene dukker opp her.
           </p>
         )}

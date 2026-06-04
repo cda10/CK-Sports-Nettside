@@ -12,7 +12,7 @@ export const Hero = () => (
       sizes="100vw"
       className="object-cover"
     />
-    <div className="absolute inset-0 bg-gradient-to-t from-[#1f3a4d]/85 via-[#1f3a4d]/30 to-[#1f3a4d]/40" />
+    <div className="absolute inset-0 bg-gradient-to-t from-[#2e3328]/85 via-[#2e3328]/30 to-[#2e3328]/40" />
 
     <div className="relative mx-auto w-full max-w-[1220px] px-5 pb-20 lg:px-10 lg:pb-28">
       <div className="max-w-2xl">

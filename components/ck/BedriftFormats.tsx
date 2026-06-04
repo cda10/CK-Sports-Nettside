@@ -23,13 +23,13 @@ export const BedriftFormats = () => (
   <section className="bg-[#f3efe8]">
     <div className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
       <div className="mb-14 max-w-2xl">
-        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#62a8c9] uppercase">
+        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
           Opplegg
         </p>
-        <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#1f3a4d] lg:text-[48px]">
+        <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#33302b] lg:text-[48px]">
           Velg det som passer dere
         </h2>
-        <p className="mt-5 text-[18px] leading-relaxed text-[#1f3a4d]/70">
+        <p className="mt-5 text-[18px] leading-relaxed text-[#33302b]/70">
           Vi setter sammen et opplegg etter teamets behov. Be om et uforpliktende tilbud.
         </p>
       </div>
@@ -39,7 +39,7 @@ export const BedriftFormats = () => (
           <div
             key={f.title}
             className={`flex flex-col rounded-[24px] border bg-white p-8 ${
-              f.featured ? "border-[#62a8c9] shadow-md" : "border-[#1f3a4d]/8 shadow-sm"
+              f.featured ? "border-[#62a8c9] shadow-md" : "border-[#33302b]/8 shadow-sm"
             }`}
           >
             {f.featured && (
@@ -47,13 +47,13 @@ export const BedriftFormats = () => (
                 Mest populær
               </span>
             )}
-            <h3 className="font-[family-name:var(--font-ck-display)] text-[26px] font-medium text-[#1f3a4d]">
+            <h3 className="font-[family-name:var(--font-ck-display)] text-[26px] font-medium text-[#33302b]">
               {f.title}
             </h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#1f3a4d]/65">{f.text}</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#33302b]/65">{f.text}</p>
             <ul className="mt-6 mb-8 space-y-3">
               {f.points.map((p) => (
-                <li key={p} className="flex items-start gap-3 text-[15px] text-[#1f3a4d]/80">
+                <li key={p} className="flex items-start gap-3 text-[15px] text-[#33302b]/80">
                   <span className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full bg-[#62a8c9]" />
                   {p}
                 </li>

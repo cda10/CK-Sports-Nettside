@@ -19,10 +19,10 @@ const steps = [
 export const HowItWorks = () => (
   <section className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
     <div className="mb-14 max-w-2xl">
-      <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#62a8c9] uppercase">
+      <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
         Slik fungerer det
       </p>
-      <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#1f3a4d] lg:text-[48px]">
+      <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#33302b] lg:text-[48px]">
         Enkelt for dere, effektivt for teamet
       </h2>
     </div>
@@ -33,8 +33,8 @@ export const HowItWorks = () => (
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#62a8c9]/12 font-[family-name:var(--font-ck-display)] text-[22px] font-semibold text-[#3e88ab]">
             {s.n}
           </div>
-          <h3 className="mt-5 text-[20px] font-semibold text-[#1f3a4d]">{s.title}</h3>
-          <p className="mt-2 text-[16px] leading-relaxed text-[#1f3a4d]/65">{s.text}</p>
+          <h3 className="mt-5 text-[20px] font-semibold text-[#33302b]">{s.title}</h3>
+          <p className="mt-2 text-[16px] leading-relaxed text-[#33302b]/65">{s.text}</p>
         </div>
       ))}
     </div>
