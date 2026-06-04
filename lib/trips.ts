@@ -14,6 +14,7 @@ export type Trip = {
   included: string[]
   day: { time: string; title: string; text: string }[]
   faq: { q: string; a: string }[]
+  instructors: { name: string; role: string }[]
 }
 
 export const trips: Trip[] = [
@@ -55,7 +56,7 @@ export const trips: Trip[] = [
       {
         time: "Ettermiddag",
         title: "Yoga og pust",
-        text: "Yogaøkt tilpasset nivå, med fokus på pust, ro og restitusjon.",
+        text: "Yogaøkt med Camilla Ween fra Jivamukti Yoga Stavanger — fokus på pust, ro og restitusjon, tilpasset nivå.",
       },
       {
         time: "Kveld",
@@ -76,6 +77,10 @@ export const trips: Trip[] = [
         q: "Kan jeg melde meg på alene?",
         a: "Absolutt. Mange reiser alene — det lille reisefølget gjør at du raskt blir kjent med de andre.",
       },
+    ],
+    instructors: [
+      { name: "Kathrine Maaseide", role: "Trening og yoga · CK Sports" },
+      { name: "Camilla Ween", role: "Yoga · Jivamukti Yoga Stavanger" },
     ],
   },
 ]

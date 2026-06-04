@@ -105,6 +105,32 @@ export default async function TripPage({
         </div>
       </section>
 
+      {/* Instruktører */}
+      <section className="mx-auto max-w-[1220px] px-5 pb-4 lg:px-10">
+        <div className="rounded-[28px] bg-[#f3efe8] p-8 lg:p-12">
+          <p className="mb-7 text-[13px] font-semibold tracking-[0.28em] text-[#62a8c9] uppercase">
+            Instruktører på reisen
+          </p>
+          <div className="grid gap-7 sm:grid-cols-2">
+            {trip.instructors.map((person) => (
+              <div key={person.name} className="flex items-center gap-4">
+                <div className="flex h-14 w-14 flex-none items-center justify-center rounded-full bg-[#62a8c9]/15 font-[family-name:var(--font-ck-display)] text-[20px] font-semibold text-[#3e88ab]">
+                  {person.name
+                    .split(" ")
+                    .map((w) => w[0])
+                    .slice(0, 2)
+                    .join("")}
+                </div>
+                <div>
+                  <p className="text-[19px] font-semibold text-[#1f3a4d]">{person.name}</p>
+                  <p className="text-[14px] text-[#1f3a4d]/60">{person.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* En typisk dag */}
       <section className="mx-auto max-w-[1220px] px-5 py-20 lg:px-10 lg:py-24">
         <h2 className="mb-12 font-[family-name:var(--font-ck-display)] text-[32px] font-medium text-[#1f3a4d] lg:text-[40px]">
