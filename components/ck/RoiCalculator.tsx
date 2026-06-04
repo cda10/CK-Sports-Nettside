@@ -51,14 +51,12 @@ function Field({
 }
 
 export const RoiCalculator = () => {
-  const [employees, setEmployees] = useState(20)
+  const [employees, setEmployees] = useState(30)
   const [absencePct, setAbsencePct] = useState(6.5)
   const [costPerDay, setCostPerDay] = useState(2600)
-  const [reductionPct, setReductionPct] = useState(10)
 
   const lostDays = employees * WORK_DAYS * (absencePct / 100)
   const annualCost = lostDays * costPerDay
-  const annualSaving = annualCost * (reductionPct / 100)
 
   return (
     <section id="kalkulator" className="mx-auto max-w-[1220px] scroll-mt-24 px-5 py-24 lg:px-10 lg:py-28">
@@ -67,11 +65,10 @@ export const RoiCalculator = () => {
           Regn på det
         </p>
         <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#1f3a4d] lg:text-[48px]">
-          Hva koster sykefraværet — og hva kan dere spare?
+          Hva koster sykefraværet dere?
         </h2>
         <p className="mt-5 text-[18px] leading-relaxed text-[#1f3a4d]/70">
-          Et konservativt, forskningsbasert estimat. Juster tallene til deres egen
-          situasjon.
+          Et konservativt, kildebasert anslag. Juster tallene til deres egen situasjon.
         </p>
         <p className="mt-3 text-[14px] leading-relaxed text-[#1f3a4d]/55">
           Tallene bygger på{" "}
@@ -82,8 +79,8 @@ export const RoiCalculator = () => {
             rel="noopener noreferrer"
           >
             SSB/NAV
-          </a>
-          ,{" "}
+          </a>{" "}
+          og{" "}
           <a
             className="font-medium text-[#3e88ab] underline-offset-2 hover:underline"
             href="https://arbinn.nho.no/arbeidsrett/sykefravar_og_permisjoner/sykefravar-statistikk/artikler/kostnader-fravar/"
@@ -92,16 +89,7 @@ export const RoiCalculator = () => {
           >
             NHO/SINTEF
           </a>{" "}
-          og{" "}
-          <a
-            className="font-medium text-[#3e88ab] underline-offset-2 hover:underline"
-            href="https://www.nature.com/articles/s41598-022-06283-8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            fagfellevurdert forskning
-          </a>{" "}
-          — fullstendige kilder står nederst.
+          — se forutsetninger nederst.
         </p>
       </div>
 
@@ -128,20 +116,6 @@ export const RoiCalculator = () => {
               step={100}
               onChange={setCostPerDay}
             />
-            <div>
-              <Field
-                label="Antatt reduksjon med fast trening"
-                suffix="%"
-                value={reductionPct}
-                min={0}
-                max={20}
-                onChange={setReductionPct}
-              />
-              <p className="mt-2 text-[13px] leading-relaxed text-[#1f3a4d]/50">
-                Forskning på trening <em>i arbeidstiden</em> viser typisk rundt 10–15 %
-                lavere risiko for langtidsfravær. Standard er satt konservativt.
-              </p>
-            </div>
           </div>
         </div>
 
@@ -149,9 +123,9 @@ export const RoiCalculator = () => {
         <div className="flex flex-col justify-between rounded-[28px] bg-gradient-to-br from-[#1f3a4d] to-[#16586f] p-8 text-white">
           <div>
             <p className="text-[13px] font-medium tracking-wide text-white/60">
-              Dagens sykefravær koster anslagsvis
+              Sykefravær koster bedriften anslagsvis
             </p>
-            <p className="mt-1 font-[family-name:var(--font-ck-display)] text-[40px] leading-none font-medium lg:text-[48px]">
+            <p className="mt-1 font-[family-name:var(--font-ck-display)] text-[44px] leading-none font-semibold lg:text-[56px]">
               {nok(annualCost)}
             </p>
             <p className="mt-1 text-[14px] text-white/55">
@@ -161,14 +135,11 @@ export const RoiCalculator = () => {
 
             <div className="my-7 h-px bg-white/15" />
 
-            <p className="text-[13px] font-medium tracking-wide text-[#9cd0e4]">
-              Mulig årlig besparelse ved {reductionPct} % reduksjon
-            </p>
-            <p className="mt-1 font-[family-name:var(--font-ck-display)] text-[44px] leading-none font-semibold text-[#9cd0e4] lg:text-[56px]">
-              {nok(annualSaving)}
-            </p>
-            <p className="mt-2 text-[14px] text-white/55">
-              Tilsvarer {nok(annualSaving / 12)} i måneden.
+            <p className="text-[15px] leading-relaxed text-white/80">
+              Det meste av dette er sammensatt og kan ikke fjernes med ett tiltak. Men
+              regelmessig bevegelse i arbeidstiden er ett konkret bidrag — til mer energi,
+              bedre trivsel og lavere terskel for å holde seg i form. Selv en liten nedgang
+              har verdi.
             </p>
           </div>
 
@@ -201,10 +172,10 @@ export const RoiCalculator = () => {
           >
             SINTEF for NHO
           </a>
-          ). Effekten av trening på sykefravær er forskningsmessig{" "}
-          <em>blandet</em>; den sterkeste evidensen gjelder trening{" "}
-          <em>i arbeidstiden</em> — mikrotrening i arbeidstiden ga ~14 % lavere risiko
-          for langtidsfravær (HR 0,86), mens trening på fritiden ikke ga effekt (
+          ). Tallene viser hva fraværet koster — ikke et løfte om besparelse. Effekten av
+          trening på sykefravær er forskningsmessig blandet; den sterkeste evidensen gjelder
+          trening <em>i arbeidstiden</em> (mikrotrening: ~14 % lavere risiko for
+          langtidsfravær,{" "}
           <a
             className="underline hover:text-[#3e88ab]"
             href="https://www.nature.com/articles/s41598-022-06283-8"
@@ -213,7 +184,7 @@ export const RoiCalculator = () => {
           >
             Scientific Reports 2022
           </a>
-          ). Dette er et estimat for å illustrere potensialet — ikke en garanti.
+          ).
         </p>
       </div>
     </section>

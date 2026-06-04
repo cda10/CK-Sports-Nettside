@@ -21,7 +21,7 @@ export const BedriftHero = () => (
         <div className="mt-9 flex flex-wrap gap-3">
           <LeadButton type="bedrift" label="Be om tilbud" variant="primary" />
           <Button href="#kalkulator" variant="outline">
-            Regn på besparelsen
+            Hva koster fraværet?
           </Button>
         </div>
       </div>
