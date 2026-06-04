@@ -48,8 +48,26 @@ bun run start
    - Vent til cksports.no viser den nye siden og er stabil.
    - Koble domenet fra Wix, og nedgrader/si opp Wix-abonnementet.
 
+## Miljøvariabler (settes i Vercel → Settings → Environment Variables)
+
+Alle er valgfrie — siden fungerer uten, men funksjoner aktiveres når de er satt:
+
+| Variabel | Hva det aktiverer |
+|---|---|
+| `RESEND_API_KEY` | Sender lead-skjema som e-post (via Resend). Uten: skjema viser e-post/telefon-fallback. |
+| `LEAD_TO_EMAIL` | Hvem leads sendes til (default `kathrine@maaseide.no`). |
+| `LEAD_FROM_EMAIL` | Avsender (krever verifisert domene i Resend for å sende til andre enn deg selv). |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 (`G-…`). |
+| `NEXT_PUBLIC_META_PIXEL_ID` | Meta-piksel for retargeting. |
+| `ANTHROPIC_API_KEY` | Aktiverer SoMe-generatoren på `/studio` (Claude). |
+| `STUDIO_PASSWORD` | Passord for `/studio` (internt verktøy). |
+| `ANTHROPIC_MODEL` | (Valgfritt) modell-id, default `claude-3-5-sonnet-latest`. |
+
 ## TODO før «ekte» lansering
 
-- [ ] Koble «Meld interesse»-knappene til et skjema (i dag `mailto:`).
-- [ ] Legg inn priser/datoer for Move&Yoga-reisen.
-- [ ] Vurder enkel personvern-/cookie-side hvis dere samler inn data via skjema.
+- [ ] Bytt placeholder-omtaler i `Testimonials.tsx` med ekte sitater.
+- [ ] Legg inn ekte datoer/pris i `lib/trips.ts` (i dag «be om info»).
+- [ ] (Valgfritt) ekte logo-filer for kundene i `TrustLogos.tsx`.
+- [ ] Profesjonelle bilder/film når klart.
+- [ ] Enkel personvern-/cookie-side (siden samler inn data via skjema).
+- [ ] Innhente OK fra kundene på å vises som referanse.
