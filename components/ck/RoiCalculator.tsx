@@ -73,6 +73,36 @@ export const RoiCalculator = () => {
           Et konservativt, forskningsbasert estimat. Juster tallene til deres egen
           situasjon.
         </p>
+        <p className="mt-3 text-[14px] leading-relaxed text-[#1f3a4d]/55">
+          Tallene bygger på{" "}
+          <a
+            className="font-medium text-[#3e88ab] underline-offset-2 hover:underline"
+            href="https://www.ssb.no/arbeid-og-lonn/arbeidsmiljo-sykefravaer-og-arbeidskonflikter/statistikk/sykefravaer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SSB/NAV
+          </a>
+          ,{" "}
+          <a
+            className="font-medium text-[#3e88ab] underline-offset-2 hover:underline"
+            href="https://arbinn.nho.no/arbeidsrett/sykefravar_og_permisjoner/sykefravar-statistikk/artikler/kostnader-fravar/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NHO/SINTEF
+          </a>{" "}
+          og{" "}
+          <a
+            className="font-medium text-[#3e88ab] underline-offset-2 hover:underline"
+            href="https://www.nature.com/articles/s41598-022-06283-8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            fagfellevurdert forskning
+          </a>{" "}
+          — fullstendige kilder står nederst.
+        </p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
