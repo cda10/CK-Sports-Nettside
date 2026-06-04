@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 import { Button } from "./Button"
+import { Seal } from "./Seal"
 
 export const Hero = () => (
   <section id="top" className="relative flex min-h-[92vh] items-end overflow-hidden">
@@ -13,6 +14,11 @@ export const Hero = () => (
       className="object-cover"
     />
     <div className="absolute inset-0 bg-gradient-to-t from-[#2e3328]/85 via-[#2e3328]/30 to-[#2e3328]/40" />
+
+    <Seal
+      spin
+      className="pointer-events-none absolute top-24 right-5 h-20 w-20 text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] lg:top-32 lg:right-12 lg:h-32 lg:w-32"
+    />
 
     <div className="relative mx-auto w-full max-w-[1220px] px-5 pb-20 lg:px-10 lg:pb-28">
       <div className="max-w-2xl">

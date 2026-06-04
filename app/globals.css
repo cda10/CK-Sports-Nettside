@@ -40,6 +40,19 @@
   top: 1rem;
 }
 
+/* Roterende CK-stempel (kun når bevegelse er ok) */
+@media (prefers-reduced-motion: no-preference) {
+  .seal-spin {
+    animation: seal-rotate 38s linear infinite;
+    transform-origin: center;
+  }
+}
+@keyframes seal-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Rolig innfasing ved scroll. Aktiveres kun når JS legger til .js-reveal,
    så innholdet alltid er synlig uten JS. Respekterer redusert bevegelse. */
 .js-reveal [data-reveal] {
