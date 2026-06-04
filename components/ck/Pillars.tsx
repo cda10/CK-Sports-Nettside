@@ -6,7 +6,7 @@ const pillars = [
     id: "bedrift-kort",
     eyebrow: "I arbeidstiden",
     title: "Bedrifts-bootcamp",
-    image: "/ck/studio-group.jpg",
+    image: "/ck/studio-group-real.jpg",
     text: "Vi kommer til arbeidsplassen og kjører effektive økter midt i arbeidsdagen. Lav terskel, tilpasset alle nivåer — energi og samhold for hele teamet.",
     href: "#bedrift",
     cta: "Les mer",

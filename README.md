@@ -50,8 +50,6 @@ bun run start
 
 ## TODO før «ekte» lansering
 
-- [ ] Bytt ut det AI-genererte bildet i «Bedrifts-bootcamp»-pilaret
-      (`public/ck/studio-group.jpg`) med et ekte foto.
 - [ ] Koble «Meld interesse»-knappene til et skjema (i dag `mailto:`).
 - [ ] Legg inn priser/datoer for Move&Yoga-reisen.
 - [ ] Vurder enkel personvern-/cookie-side hvis dere samler inn data via skjema.
