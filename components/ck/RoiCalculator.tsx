@@ -61,7 +61,7 @@ export const RoiCalculator = () => {
   const annualSaving = annualCost * (reductionPct / 100)
 
   return (
-    <section className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
+    <section id="kalkulator" className="mx-auto max-w-[1220px] scroll-mt-24 px-5 py-24 lg:px-10 lg:py-28">
       <div className="mb-12 max-w-2xl">
         <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#62a8c9] uppercase">
           Regn på det

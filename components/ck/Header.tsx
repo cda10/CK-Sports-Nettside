@@ -8,10 +8,10 @@ import cn from "classnames"
 import { LeadButton } from "./LeadButton"
 
 const navLinks = [
-  { label: "Bedrifts-bootcamp", href: "#bedrift" },
-  { label: "Move & Yoga", href: "#reiser" },
-  { label: "Om oss", href: "#om" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Bedrifts-bootcamp", href: "/bedrift" },
+  { label: "Move & Yoga", href: "/#reiser" },
+  { label: "Om oss", href: "/#om" },
+  { label: "Kontakt", href: "/#kontakt" },
 ]
 
 export const Header = () => {
@@ -35,7 +35,7 @@ export const Header = () => {
       )}
     >
       <div className="mx-auto flex max-w-[1220px] items-center justify-between px-5 py-3 lg:px-10">
-        <Link href="#top" className="flex items-center gap-3" aria-label="CK Sports">
+        <Link href="/" className="flex items-center gap-3" aria-label="CK Sports">
           <Image
             src="/ck/logo-teal.png"
             alt="CK Sports"
