@@ -8,7 +8,7 @@ const pillars = [
     title: "Bedrifts-bootcamp",
     image: "/ck/studio-group-real.jpg",
     text: "Vi kommer til arbeidsplassen og kjører effektive økter midt i arbeidsdagen. Lav terskel, tilpasset alle nivåer — energi og samhold for hele teamet.",
-    href: "#bedrift",
+    href: "/bedrift",
     cta: "Les mer",
   },
   {
@@ -17,7 +17,7 @@ const pillars = [
     title: "Move & Yoga treningsreiser",
     image: "/ck/trip-handstand.jpg",
     text: "En uke der trening, yoga og hvile møtes. Morgenøkter, yoga i solnedgang og tid til å lade opp — i vakre omgivelser ved Middelhavet.",
-    href: "#reiser",
+    href: "/reiser",
     cta: "Se reisene",
   },
 ]

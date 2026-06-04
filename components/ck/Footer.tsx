@@ -2,10 +2,10 @@ import Image from "next/image"
 import Link from "next/link"
 
 const nav = [
-  { label: "Bedrifts-bootcamp", href: "#bedrift" },
-  { label: "Move & Yoga", href: "#reiser" },
-  { label: "Om oss", href: "#om" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Bedrifts-bootcamp", href: "/bedrift" },
+  { label: "Move & Yoga", href: "/reiser" },
+  { label: "Om oss", href: "/#om" },
+  { label: "Kontakt", href: "/#kontakt" },
 ]
 
 export const Footer = () => (

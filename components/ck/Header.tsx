@@ -9,7 +9,7 @@ import { LeadButton } from "./LeadButton"
 
 const navLinks = [
   { label: "Bedrifts-bootcamp", href: "/bedrift" },
-  { label: "Move & Yoga", href: "/#reiser" },
+  { label: "Move & Yoga", href: "/reiser" },
   { label: "Om oss", href: "/#om" },
   { label: "Kontakt", href: "/#kontakt" },
 ]
