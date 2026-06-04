@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import {
   BedriftHero,
   HowItWorks,
+  Evidence,
   BedriftFormats,
   RoiCalculator,
   TrustLogos,
@@ -22,6 +23,7 @@ export default function BedriftPage() {
     <>
       <BedriftHero />
       <HowItWorks />
+      <Evidence />
       <BedriftFormats />
       <RoiCalculator />
       <TrustLogos />

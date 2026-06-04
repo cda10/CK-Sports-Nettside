@@ -3,6 +3,7 @@ import {
   Intro,
   Pillars,
   Corporate,
+  Evidence,
   RoiCalculator,
   TrustLogos,
   FeaturedTrip,
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Intro />
       <Pillars />
       <Corporate />
+      <Evidence />
       <RoiCalculator />
       <TrustLogos />
       <FeaturedTrip />
