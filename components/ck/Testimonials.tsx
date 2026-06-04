@@ -31,9 +31,11 @@ export const Testimonials = () => (
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        {testimonials.map((t) => (
+        {testimonials.map((t, i) => (
           <figure
             key={t.role}
+            data-reveal
+            style={{ "--reveal-delay": `${i * 120}ms` } as React.CSSProperties}
             className="flex flex-col rounded-[24px] border border-[#33302b]/8 bg-white p-8 shadow-sm"
           >
             <div className="mb-4 text-[40px] leading-none text-[#7c8c4e]/40 font-[family-name:var(--font-ck-display)]">

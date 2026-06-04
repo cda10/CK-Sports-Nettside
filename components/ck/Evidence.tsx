@@ -1,3 +1,5 @@
+import { Sprig } from "./Sprig"
+
 type Item = {
   stat: string
   title: string
@@ -33,8 +35,9 @@ const items: Item[] = [
 ]
 
 export const Evidence = () => (
-  <section className="bg-[#2e3328] text-white">
-    <div className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
+  <section className="relative overflow-hidden bg-[#2e3328] text-white">
+    <Sprig className="pointer-events-none absolute -top-6 -right-6 h-64 w-auto rotate-12 text-white/[0.06] lg:h-96" />
+    <div className="relative mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
       <div className="mb-16 max-w-2xl">
         <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#c3d29c] uppercase">
           Dokumentert effekt
@@ -49,8 +52,13 @@ export const Evidence = () => (
       </div>
 
       <div className="grid gap-x-12 gap-y-14 md:grid-cols-3">
-        {items.map((it) => (
-          <div key={it.title} className="border-t border-white/15 pt-7">
+        {items.map((it, i) => (
+          <div
+            key={it.title}
+            data-reveal
+            style={{ "--reveal-delay": `${i * 120}ms` } as React.CSSProperties}
+            className="border-t border-white/15 pt-7"
+          >
             <p className="font-[family-name:var(--font-ck-display)] text-[52px] leading-none font-medium text-[#c3d29c]">
               {it.stat}
             </p>

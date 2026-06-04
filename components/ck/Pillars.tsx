@@ -25,11 +25,13 @@ const pillars = [
 export const Pillars = () => (
   <section className="mx-auto max-w-[1220px] px-5 pb-8 lg:px-10">
     <div className="grid gap-6 lg:grid-cols-2">
-      {pillars.map((p) => (
+      {pillars.map((p, i) => (
         <Link
           key={p.id}
           id={p.id}
           href={p.href}
+          data-reveal
+          style={{ "--reveal-delay": `${i * 110}ms` } as React.CSSProperties}
           className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[28px] scroll-mt-24 sm:aspect-[5/4] lg:aspect-[4/5]"
         >
           <Image

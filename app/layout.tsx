@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Geist } from "next/font/google"
 
 import "./globals.css"
 
-import { Header, Footer, JsonLd, Analytics } from "@/components/ck"
+import { Header, Footer, JsonLd, Analytics, RevealObserver } from "@/components/ck"
 
 const display = Cormorant_Garamond({
   variable: "--font-ck-display",
@@ -51,6 +51,7 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-ck-sans)" }}
       >
         <JsonLd />
+        <RevealObserver />
         <Header />
         <main>{children}</main>
         <Footer />

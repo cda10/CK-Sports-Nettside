@@ -10,6 +10,7 @@ import {
   AboutKathrine,
   Testimonials,
   Included,
+  PhotoBand,
   CtaBand,
 } from "@/components/ck"
 
@@ -27,6 +28,11 @@ export default function HomePage() {
       <AboutKathrine />
       <Testimonials />
       <Included />
+      <PhotoBand
+        src="/ck/trip-arch-window.jpg"
+        alt="Solnedgang over bukten på en Move&Yoga treningsreise"
+        caption="Tren. Pust. Lad opp i solen."
+      />
       <CtaBand />
     </>
   )
