@@ -23,6 +23,32 @@ Regler:
 - Ingen falske tall, garantier eller påstander.
 - Tilpass lengde og tone til kanalen: Instagram = kort, fengende, visuelt; LinkedIn = mer profesjonell og verdiorientert (særlig for bedrift); Facebook = informativ, egnet for arrangement/påmelding.`
 
+function demoPost(channel: string, topic: string, details: string): string {
+  const d = details ? ` ${details}` : ""
+  const tags =
+    channel === "LinkedIn"
+      ? "#bedriftshelse #trivsel #lederskap #cksports #stavanger"
+      : channel === "Facebook"
+        ? "#cksports #stavanger #trening #moveogyoga"
+        : "#cksports #moveogyoga #bedriftstrening #yoga #stavanger #wellness #treningsglede"
+
+  let v1: string
+  let v2: string
+
+  if (channel === "LinkedIn") {
+    v1 = `De som beveger seg sammen, blir ikke bare sprekere – de trives bedre og presterer bedre på jobb.\n\n${topic}.${d}\n\nHos CK Sports kommer vi til arbeidsplassen og trener teamet i arbeidstiden – lav terskel, tilpasset alle. Resultatet: mer energi, bedre samhold og en arbeidsplass folk vil bli i.\n\nVil dere høre mer? Ta kontakt for et uforpliktende tilbud.\n\n${tags}`
+    v2 = `En treningsøkt midt på dagen er ikke tapt tid – det er en investering i energi, fokus og trivsel.\n\n${topic}.${d}\n\nVi gjør det enkelt: vi kommer til dere, og setter sammen økter som får hele teamet med.\n\n${tags}`
+  } else if (channel === "Facebook") {
+    v1 = `🌿 ${topic}${d}\n\nBli med på trening som gir mer enn svette – energi, samhold og overskudd, sammen med Kathrine Maaseide. Passer alle nivåer.\n\nSend oss en melding for datoer og påmelding!\n\n${tags}`
+    v2 = `Klar for litt påfyll? ${topic}.${d}\n\nVi gleder oss til å se deg – meld interesse i dag, helt uforpliktende. 🌞\n\n${tags}`
+  } else {
+    v1 = `☀️ ${topic}\n\nTren, pust og lad opp – sammen. ${details || "Energi, ro og fellesskap, uansett nivå."}\n\nMeld interesse via lenken i bio 🌿\n\n${tags}`
+    v2 = `Litt bevegelse. Mye overskudd. ✨\n\n${topic}.${d}\n\nBli med – det er plass til deg.\n\n${tags}`
+  }
+
+  return `(Demo — ekte AI aktiveres med ANTHROPIC_API_KEY i Vercel)\n\nVariant 1\n${v1}\n\n———\n\nVariant 2\n${v2}`
+}
+
 export async function POST(request: Request) {
   const apiKey = process.env.ANTHROPIC_API_KEY
   const password = process.env.STUDIO_PASSWORD
@@ -42,15 +68,21 @@ export async function POST(request: Request) {
   if (!password || body.password !== password) {
     return NextResponse.json({ ok: false, error: "Feil passord." }, { status: 401 })
   }
-  if (!apiKey) {
-    return NextResponse.json({ ok: false, error: "not_configured" }, { status: 503 })
-  }
 
   const channel = body.channel || "Instagram"
   const topic = (body.topic || "").trim()
   const details = (body.details || "").trim()
   if (!topic) {
     return NextResponse.json({ ok: false, error: "Skriv hva posten skal handle om." }, { status: 422 })
+  }
+
+  // Demo-modus: når ingen ekte AI-nøkkel er satt, men STUDIO_DEMO=1.
+  // Lar dere teste flyten og se stemmen/formatet uten API-kostnad.
+  if (!apiKey) {
+    if (process.env.STUDIO_DEMO === "1") {
+      return NextResponse.json({ ok: true, text: demoPost(channel, topic, details) })
+    }
+    return NextResponse.json({ ok: false, error: "not_configured" }, { status: 503 })
   }
 
   const userPrompt = `Lag en ${channel}-post for CK Sports.
