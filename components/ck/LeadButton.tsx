@@ -102,7 +102,7 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
           >
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
-                <p className="text-[12px] font-semibold tracking-[0.2em] text-[#7c8c4e] uppercase">
+                <p className="text-[12px] font-semibold tracking-[0.2em] text-[#5f6e30] uppercase">
                   {isBedrift ? "Bedrifts-bootcamp" : "Move & Yoga treningsreise"}
                 </p>
                 <h3 className="mt-1 font-[family-name:var(--font-ck-display)] text-[26px] leading-tight font-medium text-[#33302b]">
@@ -166,29 +166,29 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label className={labelClass}>Navn *</label>
-                    <input name="name" required className={inputClass} placeholder="Ditt navn" />
+                    <input name="name" required aria-label="Navn" className={inputClass} placeholder="Ditt navn" />
                   </div>
                   <div>
                     <label className={labelClass}>E-post *</label>
-                    <input name="email" type="email" required className={inputClass} placeholder="navn@epost.no" />
+                    <input name="email" type="email" required aria-label="E-post" className={inputClass} placeholder="navn@epost.no" />
                   </div>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label className={labelClass}>Telefon</label>
-                    <input name="phone" className={inputClass} placeholder="Valgfritt" />
+                    <input name="phone" aria-label="Telefon" className={inputClass} placeholder="Valgfritt" />
                   </div>
                   {isBedrift ? (
                     <div>
                       <label className={labelClass}>Bedrift</label>
-                      <input name="company" className={inputClass} placeholder="Firmanavn" />
+                      <input name="company" aria-label="Bedrift" className={inputClass} placeholder="Firmanavn" />
                     </div>
                   ) : (
                     <div>
                       <label className={labelClass}>Reise</label>
                       <input
-                        name="trip"
+                        name="trip" aria-label="Reise"
                         className={inputClass}
                         defaultValue={trip || "Malaga"}
                       />
@@ -201,7 +201,7 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
                     <>
                       <div>
                         <label className={labelClass}>Antall ansatte</label>
-                        <select name="employees" className={inputClass} defaultValue="">
+                        <select name="employees" aria-label="Antall ansatte" className={inputClass} defaultValue="">
                           <option value="" disabled>
                             Velg
                           </option>
@@ -213,13 +213,13 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
                       </div>
                       <div>
                         <label className={labelClass}>Sted</label>
-                        <input name="location" className={inputClass} placeholder="By / adresse" />
+                        <input name="location" aria-label="Sted" className={inputClass} placeholder="By / adresse" />
                       </div>
                     </>
                   ) : (
                     <div>
                       <label className={labelClass}>Antall personer</label>
-                      <input name="people" className={inputClass} placeholder="F.eks. 2" />
+                      <input name="people" aria-label="Antall personer" className={inputClass} placeholder="F.eks. 2" />
                     </div>
                   )}
                 </div>
@@ -227,7 +227,7 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
                 <div>
                   <label className={labelClass}>Melding</label>
                   <textarea
-                    name="message"
+                    name="message" aria-label="Melding"
                     rows={3}
                     className={inputClass}
                     placeholder={

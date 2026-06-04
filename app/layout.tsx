@@ -50,10 +50,13 @@ export default function RootLayout({
         className="min-h-full bg-[#faf8f4] text-[#33302b] antialiased"
         style={{ fontFamily: "var(--font-ck-sans)" }}
       >
+        <a href="#main" className="skip-link">
+          Hopp til innhold
+        </a>
         <JsonLd />
         <RevealObserver />
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
         <Analytics />
       </body>

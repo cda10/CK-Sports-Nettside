@@ -108,7 +108,7 @@ export default async function TripPage({
       {/* Instruktører */}
       <section className="mx-auto max-w-[1220px] px-5 pb-4 lg:px-10">
         <div className="rounded-[28px] bg-[#f3efe8] p-8 lg:p-12">
-          <p className="mb-7 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
+          <p className="mb-7 text-[13px] font-semibold tracking-[0.28em] text-[#5f6e30] uppercase">
             Instruktører på reisen
           </p>
           <div className="grid gap-7 sm:grid-cols-2">
@@ -139,7 +139,7 @@ export default async function TripPage({
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {trip.day.map((d) => (
             <div key={d.time} className="border-t-2 border-[#62a8c9] pt-5">
-              <p className="text-[12px] font-semibold tracking-[0.2em] text-[#7c8c4e] uppercase">
+              <p className="text-[12px] font-semibold tracking-[0.2em] text-[#5f6e30] uppercase">
                 {d.time}
               </p>
               <h3 className="mt-2 text-[19px] font-semibold text-[#33302b]">{d.title}</h3>

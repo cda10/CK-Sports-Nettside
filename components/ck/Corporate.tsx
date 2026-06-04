@@ -32,7 +32,7 @@ export const Corporate = () => (
         </div>
 
         <div>
-          <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
+          <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#5f6e30] uppercase">
             Bedrifts-bootcamp · I arbeidstiden
           </p>
           <h2 className="font-[family-name:var(--font-ck-display)] text-[40px] leading-tight font-medium text-[#33302b] lg:text-[52px]">

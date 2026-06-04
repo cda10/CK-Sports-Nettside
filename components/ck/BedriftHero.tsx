@@ -7,7 +7,7 @@ export const BedriftHero = () => (
   <section className="bg-[#faf8f4]">
     <div className="mx-auto grid max-w-[1220px] items-center gap-12 px-5 pt-32 pb-16 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:pt-40 lg:pb-24">
       <div>
-        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
+        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#5f6e30] uppercase">
           Bedrifts-bootcamp · I arbeidstiden
         </p>
         <h1 className="font-[family-name:var(--font-ck-display)] text-[44px] leading-[1.05] font-medium text-[#33302b] lg:text-[64px]">

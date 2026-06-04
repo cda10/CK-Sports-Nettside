@@ -23,7 +23,7 @@ export const BedriftFormats = () => (
   <section className="bg-[#f3efe8]">
     <div className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-28">
       <div className="mb-14 max-w-2xl">
-        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
+        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#5f6e30] uppercase">
           Opplegg
         </p>
         <h2 className="font-[family-name:var(--font-ck-display)] text-[36px] leading-tight font-medium text-[#33302b] lg:text-[48px]">
@@ -35,15 +35,17 @@ export const BedriftFormats = () => (
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        {formats.map((f) => (
+        {formats.map((f, i) => (
           <div
             key={f.title}
-            className={`flex flex-col rounded-[24px] border bg-white p-8 ${
-              f.featured ? "border-[#62a8c9] shadow-md" : "border-[#33302b]/8 shadow-sm"
+            data-reveal
+            style={{ "--reveal-delay": `${i * 110}ms` } as React.CSSProperties}
+            className={`flex flex-col rounded-[24px] bg-[#faf8f4] p-8 ${
+              f.featured ? "border-2 border-[#8a9a5b]" : "border border-[#33302b]/10"
             }`}
           >
             {f.featured && (
-              <span className="mb-4 inline-flex w-fit rounded-full bg-[#62a8c9]/12 px-3 py-1 text-[12px] font-semibold tracking-wide text-[#3e88ab] uppercase">
+              <span className="mb-4 inline-flex w-fit rounded-full bg-[#5f6e30]/12 px-3 py-1 text-[12px] font-semibold tracking-wide text-[#4f5d28] uppercase">
                 Mest populær
               </span>
             )}
@@ -54,7 +56,7 @@ export const BedriftFormats = () => (
             <ul className="mt-6 mb-8 space-y-3">
               {f.points.map((p) => (
                 <li key={p} className="flex items-start gap-3 text-[15px] text-[#33302b]/80">
-                  <span className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full bg-[#62a8c9]" />
+                  <span className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full bg-[#8a9a5b]" />
                   {p}
                 </li>
               ))}

@@ -15,7 +15,7 @@ export default function ReiserPage() {
     <>
       <section className="bg-[#faf8f4]">
         <div className="mx-auto max-w-[1220px] px-5 pt-32 pb-12 lg:px-10 lg:pt-40 lg:pb-16">
-          <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
+          <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#5f6e30] uppercase">
             Move & Yoga treningsreiser
           </p>
           <h1 className="max-w-3xl font-[family-name:var(--font-ck-display)] text-[44px] leading-[1.05] font-medium text-[#33302b] lg:text-[64px]">

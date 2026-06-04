@@ -13,7 +13,7 @@ export const FeaturedTrip = () => (
   <section id="reiser" className="scroll-mt-24 bg-[#f3efe8]">
     <div className="mx-auto max-w-[1220px] px-5 py-24 lg:px-10 lg:py-32">
       <div className="mb-14 max-w-2xl">
-        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#7c8c4e] uppercase">
+        <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#5f6e30] uppercase">
           Move & Yoga treningsreiser
         </p>
         <h2 className="font-[family-name:var(--font-ck-display)] text-[40px] leading-tight font-medium text-[#33302b] lg:text-[56px]">
