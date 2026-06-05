@@ -53,8 +53,11 @@ function demoPost(channel: string, topic: string, details: string): string {
 }
 
 export async function POST(request: Request) {
-  // Leser nytt navn først (ANTHROPIC_KEY), faller tilbake til ANTHROPIC_API_KEY.
-  const apiKey = process.env.ANTHROPIC_KEY || process.env.ANTHROPIC_API_KEY
+  // Leser ANTHROPIC_API (navnet i Netlify) først, så fallbacks.
+  const apiKey =
+    process.env.ANTHROPIC_API ||
+    process.env.ANTHROPIC_KEY ||
+    process.env.ANTHROPIC_API_KEY
   const password = process.env.STUDIO_PASSWORD
 
   let body: {
@@ -117,8 +120,15 @@ Gi to alternative varianter, nummerert "Variant 1" og "Variant 2".`
     if (!res.ok) {
       const detail = await res.text()
       console.error("[generate] anthropic error", res.status, detail)
+      const keyInfo = apiKey
+        ? `${apiKey.slice(0, 17)}…(${apiKey.length} tegn)`
+        : "INGEN nøkkel lastet"
       return NextResponse.json(
-        { ok: false, error: "ai_failed", detail: `${res.status}: ${detail.slice(0, 400)}` },
+        {
+          ok: false,
+          error: "ai_failed",
+          detail: `${res.status}: ${detail.slice(0, 180)} || lastet nøkkel: ${keyInfo}`,
+        },
         { status: 502 },
       )
     }
