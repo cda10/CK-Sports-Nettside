@@ -127,6 +127,13 @@ Gi to alternative varianter, nummerert "Variant 1" og "Variant 2".`
     return NextResponse.json({ ok: true, text, images, motif })
   } catch (err) {
     console.error("[generate] failed", err)
-    return NextResponse.json({ ok: false, error: "ai_failed" }, { status: 502 })
+    return NextResponse.json(
+      {
+        ok: false,
+        error: "ai_failed",
+        detail: `kall feilet: ${err instanceof Error ? err.message : String(err)} (modell: ${MODEL})`,
+      },
+      { status: 502 },
+    )
   }
 }
