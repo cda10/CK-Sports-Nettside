@@ -116,7 +116,10 @@ Gi to alternative varianter, nummerert "Variant 1" og "Variant 2".`
     if (!res.ok) {
       const detail = await res.text()
       console.error("[generate] anthropic error", res.status, detail)
-      return NextResponse.json({ ok: false, error: "ai_failed" }, { status: 502 })
+      return NextResponse.json(
+        { ok: false, error: "ai_failed", detail: `${res.status}: ${detail.slice(0, 400)}` },
+        { status: 502 },
+      )
     }
 
     const data = await res.json()

@@ -54,8 +54,10 @@ export const PostGenerator = () => {
           res.status === 401
             ? "Feil passord."
             : data.error === "not_configured"
-              ? "AI er ikke konfigurert ennå (mangler API-nøkkel i Vercel)."
-              : "Klarte ikke å generere. Prøv igjen.",
+              ? "AI er ikke konfigurert ennå (mangler API-nøkkel)."
+              : data.detail
+                ? `Feil fra AI: ${data.detail}`
+                : "Klarte ikke å generere. Prøv igjen.",
         )
       }
     } catch {
