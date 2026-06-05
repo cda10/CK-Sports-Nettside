@@ -53,7 +53,8 @@ function demoPost(channel: string, topic: string, details: string): string {
 }
 
 export async function POST(request: Request) {
-  const apiKey = process.env.ANTHROPIC_API_KEY
+  // Leser nytt navn først (ANTHROPIC_KEY), faller tilbake til ANTHROPIC_API_KEY.
+  const apiKey = process.env.ANTHROPIC_KEY || process.env.ANTHROPIC_API_KEY
   const password = process.env.STUDIO_PASSWORD
 
   let body: {
