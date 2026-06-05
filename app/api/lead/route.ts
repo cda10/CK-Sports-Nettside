@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server"
-import { Resend } from "resend"
 
 export const runtime = "nodejs"
 
@@ -10,28 +9,17 @@ type LeadPayload = {
   name?: string
   email?: string
   phone?: string
-  // bedrift
   company?: string
   employees?: string
   location?: string
-  // reise
   trip?: string
   people?: string
   message?: string
-  // honeypot
-  website?: string
+  website?: string // honeypot
 }
-
-const TO = process.env.LEAD_TO_EMAIL || "kathrine@maaseide.no"
-const FROM = process.env.LEAD_FROM_EMAIL || "CK Sports <onboarding@resend.dev>"
 
 function isEmail(v: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
-}
-
-function row(label: string, value?: string) {
-  if (!value) return ""
-  return `<tr><td style="padding:4px 12px 4px 0;color:#77716c">${label}</td><td style="padding:4px 0;color:#1f3a4d"><strong>${value}</strong></td></tr>`
 }
 
 export async function POST(request: Request) {
@@ -42,7 +30,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Ugyldig forespørsel." }, { status: 400 })
   }
 
-  // Honeypot: silently accept bots without sending.
+  // Honeypot: stille aksept for bots.
   if (data.website) return NextResponse.json({ ok: true })
 
   const name = (data.name || "").trim()
@@ -54,47 +42,51 @@ export async function POST(request: Request) {
     )
   }
 
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY
+  if (!accessKey) {
+    console.warn("[lead] WEB3FORMS_ACCESS_KEY mangler — lead ikke sendt:", { name, email })
+    return NextResponse.json({ ok: false, error: "not_configured" }, { status: 503 })
+  }
+
   const isBedrift = data.type === "bedrift"
   const subject = isBedrift
     ? `Ny bedriftshenvendelse — ${data.company || name}`
     : `Ny reisehenvendelse — ${data.trip || "Move & Yoga"}`
 
-  const html = `
-    <div style="font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5">
-      <h2 style="color:#1f3a4d;margin:0 0 12px">${isBedrift ? "Bedrifts-bootcamp" : "Move & Yoga treningsreise"} — ny henvendelse</h2>
-      <table style="border-collapse:collapse">
-        ${row("Navn", name)}
-        ${row("E-post", email)}
-        ${row("Telefon", data.phone)}
-        ${isBedrift ? row("Bedrift", data.company) : row("Reise", data.trip)}
-        ${isBedrift ? row("Antall ansatte", data.employees) : row("Antall personer", data.people)}
-        ${isBedrift ? row("Sted", data.location) : ""}
-      </table>
-      ${data.message ? `<p style="margin:16px 0 4px;color:#77716c">Melding:</p><p style="color:#1f3a4d;white-space:pre-wrap">${data.message}</p>` : ""}
-    </div>`
-
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
-    // Not configured yet (e.g. local dev without key). Log so nothing is lost.
-    console.warn("[lead] RESEND_API_KEY missing — lead not emailed:", { subject, email })
-    return NextResponse.json(
-      { ok: false, error: "not_configured" },
-      { status: 503 },
-    )
+  // Web3Forms lister alle feltene i e-posten. `email` brukes som svar-til.
+  const fields: Record<string, string> = {
+    access_key: accessKey,
+    subject,
+    from_name: "CK Sports nettside",
+    Type: isBedrift ? "Bedrifts-bootcamp" : "Move & Yoga treningsreise",
+    Navn: name,
+    email,
+    Telefon: data.phone || "—",
+    ...(isBedrift
+      ? {
+          Bedrift: data.company || "—",
+          "Antall ansatte": data.employees || "—",
+          Sted: data.location || "—",
+        }
+      : {
+          Reise: data.trip || "—",
+          "Antall personer": data.people || "—",
+        }),
+    Melding: data.message || "—",
   }
 
   try {
-    const resend = new Resend(apiKey)
-    await resend.emails.send({
-      from: FROM,
-      to: TO,
-      replyTo: email,
-      subject,
-      html,
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(fields),
     })
-    return NextResponse.json({ ok: true })
+    const json = (await res.json()) as { success?: boolean }
+    if (json.success) return NextResponse.json({ ok: true })
+    console.error("[lead] web3forms svarte uten success", json)
+    return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 })
   } catch (err) {
-    console.error("[lead] send failed", err)
+    console.error("[lead] web3forms feilet", err)
     return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 })
   }
 }
