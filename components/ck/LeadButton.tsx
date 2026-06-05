@@ -59,18 +59,57 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+    if (!accessKey) {
+      setStatus("phone")
+      return
+    }
+
     const fd = new FormData(e.currentTarget)
-    const payload = { type, ...Object.fromEntries(fd.entries()) }
+    const get = (k: string) => (fd.get(k) as string) || ""
+
+    // Spamfelle: hvis honeypot er fylt ut, lat som alt gikk bra.
+    if (get("botcheck")) {
+      setStatus("done")
+      return
+    }
+
+    const company = get("company")
+    const trip = get("trip")
+    const subject = isBedrift
+      ? `Ny bedriftshenvendelse — ${company || get("name")}`
+      : `Ny reisehenvendelse — ${trip || "Move & Yoga"}`
+
+    const payload: Record<string, string> = {
+      access_key: accessKey,
+      subject,
+      from_name: "CK Sports nettside",
+      Type: isBedrift ? "Bedrifts-bootcamp" : "Move & Yoga treningsreise",
+      Navn: get("name"),
+      email: get("email"),
+      Telefon: get("phone") || "—",
+      ...(isBedrift
+        ? {
+            Bedrift: company || "—",
+            "Antall ansatte": get("employees") || "—",
+            Sted: get("location") || "—",
+          }
+        : {
+            Reise: trip || "—",
+            "Antall personer": get("people") || "—",
+          }),
+      Melding: get("message") || "—",
+    }
+
     setStatus("sending")
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(payload),
       })
-      if (res.ok) setStatus("done")
-      else if (res.status === 503) setStatus("phone")
-      else setStatus("error")
+      const json = (await res.json()) as { success?: boolean }
+      setStatus(json.success ? "done" : "error")
     } catch {
       setStatus("error")
     }
@@ -155,8 +194,8 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
               <form onSubmit={onSubmit} className="space-y-4">
                 {/* honeypot */}
                 <input
-                  type="text"
-                  name="website"
+                  type="checkbox"
+                  name="botcheck"
                   tabIndex={-1}
                   autoComplete="off"
                   className="hidden"
