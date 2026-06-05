@@ -4,11 +4,12 @@ import { pickImages, motifIdea } from "@/lib/postImages"
 
 export const runtime = "nodejs"
 
-// Internt verktøy. Krever (i Vercel):
+// Internt verktøy. Krever (i Netlify):
 //   ANTHROPIC_API_KEY  = sk-ant-...      (fra console.anthropic.com)
 //   STUDIO_PASSWORD    = <eget passord>  (deles bare internt)
-//   ANTHROPIC_MODEL    = (valgfritt) modell-id, default under
-const MODEL = process.env.ANTHROPIC_MODEL || "claude-3-5-sonnet-latest"
+//   ANTHROPIC_MODEL    = (valgfritt) overstyr modell, f.eks. claude-haiku-4-5 (billigere)
+// Default: Sonnet 4.6 — beste balanse mellom kvalitet og pris for SoMe-tekst.
+const MODEL = process.env.ANTHROPIC_MODEL || "claude-sonnet-4-6"
 
 const SYSTEM = `Du er en dyktig innholdsskribent for CK Sports.
 
