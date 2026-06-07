@@ -6,6 +6,12 @@ const testimonials = [
     name: "Anette Wathne",
     role: "Ass. banksjef, SpareBank 1 Sør-Norge",
   },
+  {
+    quote:
+      "Jeg har deltatt på Move&Yoga i Malaga to ganger og skulle veldig gjerne ha vært med hver gang dersom jeg hadde tid. En perfekt anledning til avkobling, trening, nettverksbygging og hyggelig sosialt samvær. Kvaliteten er høy fra start til slutt — profesjonelle instruktører på høyt nivå både innen yoga og styrketrening. Omgivelsene innbyr til ro mens intensiteten er høy når den skal være det. Et av høydepunktene er felles frokost ved strandpromenaden etter morgenyoga. Man trenger ikke være godt trent for å delta — intensiteten tilpasses eget nivå. Jeg kommer hjem som en bedre versjon av meg selv.",
+    name: "Ine Dolve",
+    role: "Deltaker · Move & Yoga, Malaga",
+  },
 ]
 
 export const Testimonials = () => (
