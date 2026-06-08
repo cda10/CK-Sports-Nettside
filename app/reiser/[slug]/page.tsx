@@ -55,6 +55,11 @@ export default async function TripPage({
             <span className="text-white/70"> · {trip.region}</span>
           </h1>
           <p className="mt-4 max-w-lg text-[18px] text-white/85">{trip.tagline}</p>
+          <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] font-medium text-white/80">
+            <span>{trip.dates}</span>
+            <span className="text-white/40">·</span>
+            <span>{trip.location}</span>
+          </p>
           <div className="mt-8">
             <LeadButton type="reise" label="Sikre plass" variant="light" trip={trip.name} />
           </div>
@@ -175,6 +180,68 @@ export default async function TripPage({
               />
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Pris */}
+      <section className="mx-auto max-w-[1220px] px-5 py-20 lg:px-10 lg:py-24">
+        <div className="mb-10 max-w-2xl">
+          <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#5f6e30] uppercase">
+            Pris
+          </p>
+          <h2 className="font-[family-name:var(--font-ck-display)] text-[32px] leading-tight font-medium text-[#33302b] lg:text-[40px]">
+            Hva koster reisen?
+          </h2>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-[1fr_1.5fr]">
+          {/* Deltakeravgift */}
+          <div className="flex flex-col rounded-[24px] border border-[#33302b]/8 bg-[#f3efe8] p-8 lg:p-10">
+            <p className="text-[13px] font-semibold tracking-[0.16em] text-[#33302b]/50 uppercase">
+              Deltakeravgift
+            </p>
+            <p className="mt-2 font-[family-name:var(--font-ck-display)] text-[44px] leading-none font-medium text-[#33302b]">
+              {trip.pricing.fee}
+            </p>
+            <p className="mt-4 text-[15px] leading-relaxed text-[#33302b]/65">
+              {trip.pricing.feeNote}
+            </p>
+          </div>
+
+          {/* Hotell */}
+          <div className="rounded-[24px] border border-[#33302b]/8 bg-white p-8 shadow-sm lg:p-10">
+            <div className="flex items-baseline justify-between gap-4">
+              <p className="text-[13px] font-semibold tracking-[0.16em] text-[#33302b]/50 uppercase">
+                Hotell
+              </p>
+              <p className="text-[13px] text-[#33302b]/45">1 / 2 personer i rommet</p>
+            </div>
+            <p className="mt-1 text-[16px] font-medium text-[#33302b]">{trip.pricing.hotelName}</p>
+
+            <div className="mt-5 divide-y divide-[#33302b]/10">
+              {trip.pricing.rooms.map((r) => (
+                <div key={r.name} className="flex items-baseline justify-between gap-4 py-3">
+                  <span className="text-[15px] text-[#33302b]/80">{r.name}</span>
+                  <span className="flex-none text-[15px] font-medium text-[#33302b]">
+                    {r.occ1} <span className="text-[#33302b]/30">·</span> {r.occ2}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 text-[14px] leading-relaxed text-[#33302b]/55">
+              {trip.pricing.roomsNote} Fly booker du selv — vi anbefaler gjerne flytider.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-9">
+          <LeadButton
+            type="reise"
+            label="Be om full prisoversikt og påmelding"
+            variant="primary"
+            trip={trip.name}
+          />
         </div>
       </section>
 

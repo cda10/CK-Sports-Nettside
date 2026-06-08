@@ -70,13 +70,13 @@ export const FeaturedTrip = () => (
               <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">
                 Dato
               </p>
-              <p className="mt-1 text-[17px] font-medium text-[#33302b]">November 2026</p>
+              <p className="mt-1 text-[17px] font-medium text-[#33302b]">7.–11. nov. 2026</p>
             </div>
             <div>
               <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">
                 Varighet
               </p>
-              <p className="mt-1 text-[17px] font-medium text-[#33302b]">1 uke</p>
+              <p className="mt-1 text-[17px] font-medium text-[#33302b]">4 dager</p>
             </div>
             <div>
               <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">
