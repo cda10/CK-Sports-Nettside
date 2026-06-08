@@ -5,6 +5,7 @@ export type Trip = {
   name: string
   region: string
   tagline: string
+  dates: string
   duration: string
   level: string
   status: string
@@ -23,6 +24,7 @@ export const trips: Trip[] = [
     name: "Malaga",
     region: "Spania",
     tagline: "Tren, pust og lad opp i solen",
+    dates: "November 2026",
     duration: "1 uke",
     level: "Alle nivåer",
     status: "Påmelding åpen",
@@ -30,10 +32,11 @@ export const trips: Trip[] = [
       "En uke der trening, yoga og hvile møtes — i vakre omgivelser ved Middelhavet. Morgenøkter i frisk luft, yoga i solnedgang, gode måltider og tid til å lade opp. Et lite, trygt reisefølge der alle blir tatt vare på, uansett nivå.",
     image: "/ck/trip-group.jpg",
     gallery: [
-      "/ck/trip-sunset-palms.jpg",
-      "/ck/trip-arch-window.jpg",
-      "/ck/trip-beach-gym.jpg",
       "/ck/trip-handstand.jpg",
+      "/ck/trip-sunset-walk.jpg",
+      "/ck/trip-beach-gym.jpg",
+      "/ck/trip-dusk-beach.jpg",
+      "/ck/trip-arch-window.jpg",
     ],
     included: [
       "Daglige trenings- og yogaøkter med Kathrine",

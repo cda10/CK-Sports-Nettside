@@ -39,8 +39,8 @@ export const FeaturedTrip = () => (
           </div>
           <div className="relative aspect-square overflow-hidden rounded-[24px]">
             <Image
-              src="/ck/trip-arch-window.jpg"
-              alt="Buevindu mot bukten ved soloppgang"
+              src="/ck/trip-promenade-sunset.jpg"
+              alt="Strandpromenaden i solnedgang på en Move&Yoga treningsreise i Malaga"
               fill
               sizes="(min-width: 1024px) 270px, 50vw"
               className="object-cover"
@@ -48,8 +48,8 @@ export const FeaturedTrip = () => (
           </div>
           <div className="relative aspect-square overflow-hidden rounded-[24px]">
             <Image
-              src="/ck/trip-beach-gym.jpg"
-              alt="Solnedgang over havet på en Move&Yoga treningsreise"
+              src="/ck/trip-palms-glow.jpg"
+              alt="Palmer i solnedgang ved Middelhavet på en Move&Yoga treningsreise"
               fill
               sizes="(min-width: 1024px) 270px, 50vw"
               className="object-cover"
@@ -65,6 +65,12 @@ export const FeaturedTrip = () => (
                 Destinasjon
               </p>
               <p className="mt-1 text-[17px] font-medium text-[#33302b]">Malaga, Spania</p>
+            </div>
+            <div>
+              <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">
+                Dato
+              </p>
+              <p className="mt-1 text-[17px] font-medium text-[#33302b]">November 2026</p>
             </div>
             <div>
               <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">

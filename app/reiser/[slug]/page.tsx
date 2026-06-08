@@ -72,6 +72,7 @@ export default async function TripPage({
           </div>
           <div className="flex flex-col gap-5 rounded-[24px] bg-[#f3efe8] p-8">
             {[
+              { label: "Dato", value: trip.dates },
               { label: "Varighet", value: trip.duration },
               { label: "Nivå", value: trip.level },
               { label: "Status", value: trip.status },
