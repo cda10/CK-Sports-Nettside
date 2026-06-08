@@ -105,29 +105,35 @@ export default async function TripPage({
         </div>
       </section>
 
-      {/* Instruktører */}
-      <section className="mx-auto max-w-[1220px] px-5 pb-4 lg:px-10">
-        <div className="rounded-[28px] bg-[#f3efe8] p-8 lg:p-12">
-          <p className="mb-7 text-[13px] font-semibold tracking-[0.28em] text-[#5f6e30] uppercase">
-            Instruktører på reisen
+      {/* Instruktørene */}
+      <section className="mx-auto max-w-[1220px] px-5 py-20 lg:px-10 lg:py-24">
+        <div className="mb-10 max-w-2xl">
+          <p className="mb-4 text-[13px] font-semibold tracking-[0.28em] text-[#5f6e30] uppercase">
+            Instruktørene dine
           </p>
-          <div className="grid gap-7 sm:grid-cols-2">
-            {trip.instructors.map((person) => (
-              <div key={person.name} className="flex items-center gap-4">
-                <div className="flex h-14 w-14 flex-none items-center justify-center rounded-full bg-[#62a8c9]/15 font-[family-name:var(--font-ck-display)] text-[20px] font-semibold text-[#3e88ab]">
-                  {person.name
-                    .split(" ")
-                    .map((w) => w[0])
-                    .slice(0, 2)
-                    .join("")}
-                </div>
-                <div>
-                  <p className="text-[19px] font-semibold text-[#33302b]">{person.name}</p>
-                  <p className="text-[14px] text-[#33302b]/60">{person.role}</p>
-                </div>
+          <h2 className="font-[family-name:var(--font-ck-display)] text-[32px] leading-tight font-medium text-[#33302b] lg:text-[40px]">
+            Erfarne hender hele uka
+          </h2>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2">
+          {trip.instructors.map((person) => (
+            <div
+              key={person.name}
+              className="flex items-center gap-5 rounded-[24px] border border-[#33302b]/8 bg-white p-6 shadow-sm lg:p-7"
+            >
+              <div className="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-[#62a8c9]/15 font-[family-name:var(--font-ck-display)] text-[22px] font-semibold text-[#3e88ab]">
+                {person.name
+                  .split(" ")
+                  .map((w) => w[0])
+                  .slice(0, 2)
+                  .join("")}
               </div>
-            ))}
-          </div>
+              <div>
+                <p className="text-[20px] font-semibold text-[#33302b]">{person.name}</p>
+                <p className="mt-0.5 text-[14px] text-[#33302b]/60">{person.role}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
