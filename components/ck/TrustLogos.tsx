@@ -1,21 +1,28 @@
-// Ekte bedriftskunder. Tekst-wordmarks inntil dere evt. legger inn offisielle
-// logoer (SVG/PNG i /public/ck/logos/) for ekstra polish.
-const companies = ["SpareBank 1 Sør-Norge", "Harbour Energy", "Mono Eiendom"]
+import Image from "next/image"
+
+// Ekte bedriftskunder med offisielle logoer. Legg til flere etter hvert
+// (PNG/SVG med transparent bakgrunn i /public/ck/logos/).
+const logos = [
+  { src: "/ck/logos/sparebank1.png", alt: "SpareBank 1 Sør-Norge", w: 200, h: 57 },
+  { src: "/ck/logos/harbour.png", alt: "Harbour Energy", w: 150, h: 48 },
+]
 
 export const TrustLogos = () => (
   <section className="border-y border-[#33302b]/8 bg-[#faf8f4]">
     <div className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10">
-      <p className="mb-8 text-center text-[12px] font-semibold tracking-[0.24em] text-[#33302b]/45 uppercase">
+      <p className="mb-9 text-center text-[12px] font-semibold tracking-[0.24em] text-[#33302b]/45 uppercase">
         Bedrifter som trener med oss
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-5 sm:gap-x-16">
-        {companies.map((name) => (
-          <span
-            key={name}
-            className="text-[18px] font-semibold tracking-tight text-[#33302b]/65 sm:text-[20px]"
-          >
-            {name}
-          </span>
+      <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8 sm:gap-x-20">
+        {logos.map((logo) => (
+          <Image
+            key={logo.src}
+            src={logo.src}
+            alt={logo.alt}
+            width={logo.w}
+            height={logo.h}
+            className="h-9 w-auto object-contain opacity-80 sm:h-10"
+          />
         ))}
       </div>
     </div>
