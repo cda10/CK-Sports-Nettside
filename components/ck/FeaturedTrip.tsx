@@ -3,7 +3,7 @@ import Image from "next/image"
 import { LeadButton } from "./LeadButton"
 
 const included = [
-  "Daglige trenings- og yogaøkter med Kathrine",
+  "Styrketrening med Kathrine og daglig yoga med Camilla",
   "Møtet mellom aktivitet, hvile og gode måltider",
   "Treningspark og strender rett utenfor døren",
   "Lite, trygt reisefølge — passer alle nivåer",

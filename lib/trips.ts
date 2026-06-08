@@ -100,7 +100,7 @@ export const trips: Trip[] = [
       },
     ],
     instructors: [
-      { name: "Kathrine Maaseide", role: "Trening og yoga · CK Sports" },
+      { name: "Kathrine Maaseide", role: "Trening og styrke · CK Sports" },
       { name: "Camilla Veen", role: "Yoga · Jivamukti Yoga Stavanger" },
     ],
     pricing: {
