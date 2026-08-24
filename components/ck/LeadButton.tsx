@@ -185,8 +185,8 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
                   <a href="mailto:kathrine@maaseide.no" className="font-medium text-[#3e88ab] hover:underline">
                     kathrine@maaseide.no
                   </a>
-                  <a href="tel:+4791639927" className="font-medium text-[#3e88ab] hover:underline">
-                    +47 916 39 927
+                  <a href="tel:+4799297799" className="font-medium text-[#3e88ab] hover:underline">
+                    +47 992 97 799
                   </a>
                 </div>
               </div>
@@ -279,7 +279,7 @@ export const LeadButton = ({ type, label, variant = "primary", size = "md", clas
 
                 {status === "error" && (
                   <p className="text-[14px] text-red-600">
-                    Noe gikk galt. Prøv igjen, eller ring +47 916 39 927.
+                    Noe gikk galt. Prøv igjen, eller ring +47 992 97 799.
                   </p>
                 )}
 

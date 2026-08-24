@@ -16,7 +16,7 @@ const pillars = [
     eyebrow: "I solen",
     title: "Move & Yoga treningsreiser",
     image: "/ck/trip-handstand.jpg",
-    text: "En uke der trening, yoga og hvile møtes. Morgenøkter, yoga i solnedgang og tid til å lade opp — i vakre omgivelser ved Middelhavet.",
+    text: "Fem dager der trening, yoga og hvile møtes. Morgenøkter, yoga i solnedgang og tid til å lade opp — i vakre omgivelser ved Middelhavet.",
     href: "/reiser",
     cta: "Se reisene",
   },

@@ -6,7 +6,7 @@ import { trips } from "@/lib/trips"
 export const metadata: Metadata = {
   title: "Move & Yoga treningsreiser | CK Sports",
   description:
-    "Treningsreiser der trening, yoga og hvile møtes — i solen ved Middelhavet. Med Kathrine Maaseide. Passer alle nivåer.",
+    "Treningsreiser der trening, yoga og hvile møtes — i solen ved Middelhavet. Med Kathrine Maaseide og Camilla Veen. Passer alle nivåer.",
   alternates: { canonical: "/reiser" },
 }
 
@@ -22,8 +22,8 @@ export default function ReiserPage() {
             Tren, pust og lad opp i solen
           </h1>
           <p className="mt-6 max-w-xl text-[18px] leading-relaxed text-[#33302b]/70">
-            En uke der aktivitet og hvile møtes, i vakre omgivelser og et trygt, lite
-            reisefølge. Med Kathrine Maaseide.
+            Fem dager der aktivitet og hvile møtes, i vakre omgivelser ved Middelhavet.
+            Med Kathrine Maaseide og Camilla Veen.
           </p>
         </div>
       </section>
@@ -33,13 +33,6 @@ export default function ReiserPage() {
           {trips.map((trip) => (
             <TripCard key={trip.slug} trip={trip} />
           ))}
-          <div className="flex items-center justify-center rounded-[28px] border border-dashed border-[#33302b]/15 p-10 text-center">
-            <p className="text-[16px] leading-relaxed text-[#33302b]/55">
-              Flere reiser annonseres snart.
-              <br />
-              Meld interesse, så får du beskjed først.
-            </p>
-          </div>
         </div>
       </section>
     </>

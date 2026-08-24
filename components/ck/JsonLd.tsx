@@ -5,12 +5,10 @@ const data = {
   description:
     "Bedrifts-bootcamp i arbeidstiden og Move&Yoga treningsreiser med Kathrine Maaseide. Stavanger.",
   url: "https://www.cksports.no",
-  telephone: "+47 916 39 927",
+  telephone: "+47 992 97 799",
   email: "kathrine@maaseide.no",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Sverdrups gate 27",
-    postalCode: "4007",
     addressLocality: "Stavanger",
     addressCountry: "NO",
   },

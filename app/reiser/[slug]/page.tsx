@@ -118,7 +118,7 @@ export default async function TripPage({
             Instruktørene dine
           </p>
           <h2 className="font-[family-name:var(--font-ck-display)] text-[32px] leading-tight font-medium text-[#33302b] lg:text-[40px]">
-            Erfarne hender hele uka
+            Erfarne hender hele veien
           </h2>
         </div>
         <div className="grid gap-5 sm:grid-cols-2">

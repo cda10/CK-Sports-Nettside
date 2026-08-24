@@ -35,11 +35,11 @@ export const trips: Trip[] = [
     tagline: "Tren, pust og lad opp i solen",
     location: "El Oceano Beach Hotel · Mijas, Costa del Sol",
     dates: "7.–11. november 2026",
-    duration: "4 dager",
+    duration: "5 dager",
     level: "Alle nivåer",
     status: "Påmelding åpen",
     intro:
-      "Fire dager med trening, yoga og hvile ved Middelhavet — på El Oceano Beach Hotel i Mijas på Costa del Sol, rundt 30 minutter fra Malaga. Morgenyoga med havutsikt, styrkeøkter på stranden og ved hotellet, en topptur i fjellet og god tid til å lade opp før vinteren. Et lite, trygt reisefølge der alle blir tatt vare på, uansett nivå.",
+      "Fem dager med trening, yoga og hvile ved Middelhavet — på El Oceano Beach Hotel i Mijas på Costa del Sol, rundt 30 minutter fra Malaga. Morgenyoga med havutsikt, styrkeøkter på stranden og ved hotellet, en topptur i fjellet og god tid til å lade opp før vinteren. Med Kathrine Maaseide og Camilla Veen — alle blir tatt vare på, uansett nivå.",
     image: "/ck/trip-group.jpg",
     gallery: [
       "/ck/trip-handstand.jpg",
@@ -53,7 +53,7 @@ export const trips: Trip[] = [
       "Styrketrening med Kathrine — på stranden og ved hotellet (TRX, manualer, strikk)",
       "Topptur til La Concha (ca. 1200 moh) — utsikt mot Gibraltar og Afrika",
       "Morgenbad i Middelhavet, gode måltider og felles opplevelser",
-      "Lite, trygt reisefølge — passer alle nivåer",
+      "Passer alle nivåer — du velger intensitet selv",
     ],
     day: [
       {
@@ -88,7 +88,7 @@ export const trips: Trip[] = [
       },
       {
         q: "Hva er inkludert, og hva kommer i tillegg?",
-        a: "Deltakeravgiften dekker programmet — daglig yoga med Camilla og styrketrening med Kathrine, topptur og oppfølging gjennom uka. Hotell og fly kommer i tillegg; vi hjelper deg med begge. Be om full prisoversikt.",
+        a: "Deltakeravgiften dekker programmet — daglig yoga med Camilla og styrketrening med Kathrine, topptur og oppfølging gjennom hele oppholdet. Hotell og fly kommer i tillegg; vi hjelper deg med begge. Be om full prisoversikt.",
       },
       {
         q: "Hvordan kommer jeg meg dit?",
@@ -96,7 +96,7 @@ export const trips: Trip[] = [
       },
       {
         q: "Kan jeg melde meg på alene?",
-        a: "Absolutt. Mange reiser alene — det lille reisefølget gjør at du raskt blir kjent med de andre.",
+        a: "Absolutt. Mange reiser alene — gruppen og de felles øktene gjør at du raskt blir kjent med de andre.",
       },
     ],
     instructors: [

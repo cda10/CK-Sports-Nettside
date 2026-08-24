@@ -51,16 +51,11 @@ export const Footer = () => (
           kathrine@maaseide.no
         </a>
         <a
-          href="tel:+4791639927"
+          href="tel:+4799297799"
           className="text-[15px] text-white/75 transition-colors hover:text-white"
         >
-          +47 916 39 927
+          +47 992 97 799
         </a>
-        <p className="text-[15px] text-white/75">
-          Sverdrups gate 27
-          <br />
-          4007 Stavanger
-        </p>
       </div>
     </div>
 

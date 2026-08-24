@@ -6,7 +6,7 @@ const included = [
   "Styrketrening med Kathrine og daglig yoga med Camilla",
   "Møtet mellom aktivitet, hvile og gode måltider",
   "Treningspark og strender rett utenfor døren",
-  "Lite, trygt reisefølge — passer alle nivåer",
+  "Passer alle nivåer — du velger intensitet selv",
 ]
 
 export const FeaturedTrip = () => (
@@ -20,8 +20,8 @@ export const FeaturedTrip = () => (
           Lad opp i solen
         </h2>
         <p className="mt-5 text-[18px] leading-relaxed text-[#33302b]/70">
-          En uke der du trener, puster og hviler — i vakre omgivelser ved Middelhavet.
-          Neste reise går til Malaga.
+          Fem dager der du trener, puster og hviler — i vakre omgivelser ved Middelhavet.
+          Neste reise går til Malaga, med Kathrine Maaseide og Camilla Veen.
         </p>
       </div>
 
@@ -76,7 +76,7 @@ export const FeaturedTrip = () => (
               <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">
                 Varighet
               </p>
-              <p className="mt-1 text-[17px] font-medium text-[#33302b]">4 dager</p>
+              <p className="mt-1 text-[17px] font-medium text-[#33302b]">5 dager</p>
             </div>
             <div>
               <p className="text-[12px] font-semibold tracking-[0.18em] text-[#33302b]/45 uppercase">

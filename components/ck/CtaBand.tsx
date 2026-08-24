@@ -21,8 +21,8 @@ export const CtaBand = () => (
       </div>
       <p className="mt-6 text-[14px] text-white/80">
         Eller ring oss direkte:{" "}
-        <a href="tel:+4791639927" className="font-medium text-white underline-offset-2 hover:underline">
-          +47 916 39 927
+        <a href="tel:+4799297799" className="font-medium text-white underline-offset-2 hover:underline">
+          +47 992 97 799
         </a>
       </p>
     </div>
