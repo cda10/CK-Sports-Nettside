@@ -30,7 +30,7 @@ export const Hero = () => (
         </h1>
         <p className="mt-6 max-w-xl text-[18px] leading-relaxed text-white/85">
           Bedrifts-bootcamp i arbeidstiden som gir teamet ny energi — og Move&amp;Yoga
-          treningsreiser for kropp og sjel. Sammen med Kathrine Maaseide.
+          treningsreiser for kropp og sjel. Sammen med Kathrine Maaseide og Camilla Veen.
         </p>
         <div className="mt-9 flex flex-wrap gap-3">
           <Button href="#bedrift" variant="primary">

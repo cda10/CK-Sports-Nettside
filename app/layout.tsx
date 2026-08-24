@@ -18,7 +18,7 @@ const sans = Geist({
 
 const title = "CK Sports — Bedrifts-bootcamp & Move&Yoga treningsreiser"
 const description =
-  "Trening, mestring og opplevelser med Kathrine Maaseide. Bedrifts-bootcamp i arbeidstiden, og Move&Yoga treningsreiser til solen. Stavanger."
+  "Trening, mestring og opplevelser med Kathrine Maaseide og Camilla Veen. Bedrifts-bootcamp i arbeidstiden, og Move&Yoga treningsreiser til solen. Stavanger."
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cksports.no"),
