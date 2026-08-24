@@ -121,17 +121,7 @@ Gi to alternative varianter, nummerert "Variant 1" og "Variant 2".`
     if (!res.ok) {
       const detail = await res.text()
       console.error("[generate] anthropic error", res.status, detail)
-      const keyInfo = apiKey
-        ? `${apiKey.slice(0, 17)}…(${apiKey.length} tegn)`
-        : "INGEN nøkkel lastet"
-      return NextResponse.json(
-        {
-          ok: false,
-          error: "ai_failed",
-          detail: `${res.status}: ${detail.slice(0, 180)} || lastet nøkkel: ${keyInfo}`,
-        },
-        { status: 502 },
-      )
+      return NextResponse.json({ ok: false, error: "ai_failed" }, { status: 502 })
     }
 
     const data = await res.json()
@@ -139,13 +129,6 @@ Gi to alternative varianter, nummerert "Variant 1" og "Variant 2".`
     return NextResponse.json({ ok: true, text, images, motif })
   } catch (err) {
     console.error("[generate] failed", err)
-    return NextResponse.json(
-      {
-        ok: false,
-        error: "ai_failed",
-        detail: `kall feilet: ${err instanceof Error ? err.message : String(err)} (modell: ${MODEL})`,
-      },
-      { status: 502 },
-    )
+    return NextResponse.json({ ok: false, error: "ai_failed" }, { status: 502 })
   }
 }
